@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# SES3A
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Before Starting
+* Make sure you have Node installed 
 
-## Available Scripts
+### Mac Users
+Skip Straight to 'Getting Stared'
 
-In the project directory, you can run:
+### Windows Users
+Set Up WSL on your (not needed but it will make life much easier for you) - This guide can help you https://ubuntu.com/wsl
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Please follow the following guide to help you set up the project :) 
 
-### `yarn test`
+| STEP    |Description              | Command                              | Additional Notes |
+|:--------|:------------------------|:-------------------------------------|------------------|
+| 1       | Update Node             | npm install -g npm@7.21.0            |                  |
+| 2       | Clone Repo              | HTTP: <b>git clone https://github.com/anjalikalambe/SES-3A.git</b>
+SSH: <b>git clone git@github.com:anjalikalambe/SES-3A.git</b>              | Make a local directory (like your documents) to clone the project and then run git clone based on your git configuration (most would not have SSH set up so do the HTTP method)                      |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| 3       | Install Packages Part 1 | <b>npm i</b>                         |CD into <b>/react-backend</b> (this can take a few min) |
+| 4       | Install Packages Part 2 | <b>npm i</b>                         |CD back to the main SRC folder by typing <b> cd .. </b> and then CD into <b>/client</b>|
 
-### `yarn build`
+That's it :) 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running The Application
+<b>NOTE: Make sure you are in the '/client' directory to run the application</b>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Start Backend and Client (front-end) together - Easier Option\
+<b>npm run dev</b>
 
-### `yarn eject`
+### Run Back-end and Front-end Separately
+1) Back-end Server: Go to '/react-backend' and run <b>npm start</b> - This will trigger the server
+2) Front-end Server: Open a new/second teminal/cmd window in parallel with the server and go to '/client-backend' and run <b>npm start</b> - This will trigger the client/front-end
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Build and Deployment Rules
+To ensure we follow a clean and efficient development methodology, we will follow the three-tier branch approach when applying changes. This includes the following:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+master
+    ┣━━ feature
+           ┗━━ task
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Branch Rules
 
-## Learn More
+| Branch  | Naming Convention| Example           |
+|:--------|:-----------------|:------------------|
+| Master  | master           | master            |
+| Feature | feature-*        | feature-login     |    
+| Task    | task-*           | task-login_button |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+***
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Master
 
-### Code Splitting
+The Master Branch will be used as the final product.
+* <b>IMPORTANT NOTE</b> - No direct changes will be made on this branch**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Feature
 
-### Analyzing the Bundle Size
+The Feature Branch will stem off the Master Branch and will act as a topic branch. For example, if a new component such as a login feature is to be implemented, a feature branch must be created.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Task
 
-### Making a Progressive Web App
+The Task Branch will act as the child branch of the Feature Branch to which content can be added. Different goals MUST be spread across other Task Branches. Once the goal is met, branches will be merged into the feature branch via an approved Pull Request (PR). For example:
+* Task 1: Create a Login button - Once completed and the PR is approved, this will be merged into the 'feature-login' branch
+* Task 2: Change the font size on the login screen - Once completed and the PR is approved, this will also be merged into the 'feature-login' branch. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Misc Information
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enter Misc information here - testing
