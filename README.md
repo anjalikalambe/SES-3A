@@ -39,9 +39,9 @@ Command - Option 2 (SSH):  <b>git clone git@github.com:anjalikalambe/SES-3A.git<
 | STEP 3 |Install Packages Part 1/2|
 |:-------|:------------------------|                    
 
-<b>NOTE:</b> CD into <b>/react-backend</b> (this can take a few min) 
+<b>NOTE:</b> CD into '<b>/react-backend</b>' 
 
-Command: <b>npm i</b>   
+Command: <b>npm i</b> - (this can take a few min) 
 
 <hr>
 <br>
@@ -50,12 +50,10 @@ Command: <b>npm i</b>
 |:-------|:------------------------|  
 
 <b>NOTE:</b>
-CD back to the main SRC folder by typing <b> cd .. </b> and then CD into <b>/client</b>
+CD back to the main SRC folder by typing <b> 'cd ..' </b> and then CD into '<b>/client</b>'
 
 Command: <b>npm i</b>                       
 
-
-That's it :) 
 
 <hr style="width:50%">
 <br>
