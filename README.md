@@ -52,7 +52,7 @@ Command: <b>npm i</b> - (this can take a few min)
 <b>NOTE:</b>
 CD back to the main SRC folder by typing <b> 'cd ..' </b> and then CD into '<b>/client</b>'
 
-Command: <b>npm i</b>                       
+Command: <b>npm i</b> - (this can take a few min)                    
 
 
 <hr style="width:50%">
