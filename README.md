@@ -20,7 +20,10 @@ Please follow the following guide to help you set up the project :)
 | STEP   |Description              |
 |:-------|:------------------------|
 | 1      | Update Node             | 
-Command: npm install -g npm@7.21.0                             
+Command: <b>npm install -g npm@7.21.0</b>
+
+<hr>
+<br>
 
 | STEP   |Description              |
 |:-------|:------------------------|
@@ -28,22 +31,32 @@ Command: npm install -g npm@7.21.0
 <b>NOTE:</b> Make a local directory (like your documents) to clone the project and then run 'git clone' based on your git configuration (most would not have SSH set up so do the HTTP method)  
 
 Command - Option 1 (HTTP): <b>git clone https://github.com/anjalikalambe/SES-3A.git</b>
-Command - Option 1 (SSH):  <b>git clone git@github.com:anjalikalambe/SES-3A.git</b> 
+Command - Option 2 (SSH):  <b>git clone git@github.com:anjalikalambe/SES-3A.git</b> 
+
+<hr>
+<br>
 
 | STEP   |Description              |
 |:-------|:------------------------|                    
 | 3      | Install Packages Part 1 | 
 <b>NOTE:</b> CD into <b>/react-backend</b> (this can take a few min) 
 
-Command: <b>npm i</b>        
+Command: <b>npm i</b>   
 
+<hr>
+<br>
+
+| STEP   |Description              |
 |:-------|:------------------------|  
 | 4      | Install Packages Part 2 | 
 
 <b>NOTE:</b>
 CD back to the main SRC folder by typing <b> cd .. </b> and then CD into <b>/client</b>
 
-Comand: <b>npm i</b>                       
+Command: <b>npm i</b>                       
+
+<hr>
+<br>
 
 That's it :) 
 
