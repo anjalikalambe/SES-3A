@@ -9,22 +9,46 @@ Skip Straight to 'Getting Stared'
 ### Windows Users
 Set Up WSL on your (not needed but it will make life much easier for you) - This guide can help you https://ubuntu.com/wsl
 
+<hr style="width:50%">
+<br>
 
 ## Getting Started
 
 Please follow the following guide to help you set up the project :) 
 
-| STEP    |Description              | Command                              | Additional Notes |
-|:--------|:------------------------|:-------------------------------------|------------------|
-| 1       | Update Node             | npm install -g npm@7.21.0            |                  |
-| 2       | Clone Repo              | HTTP: <b>git clone https://github.com/anjalikalambe/SES-3A.git</b>
-SSH: <b>git clone git@github.com:anjalikalambe/SES-3A.git</b>              | Make a local directory (like your documents) to clone the project and then run git clone based on your git configuration (most would not have SSH set up so do the HTTP method)                      |
 
-| 3       | Install Packages Part 1 | <b>npm i</b>                         |CD into <b>/react-backend</b> (this can take a few min) |
-| 4       | Install Packages Part 2 | <b>npm i</b>                         |CD back to the main SRC folder by typing <b> cd .. </b> and then CD into <b>/client</b>|
+| STEP   |Description              |
+|:-------|:------------------------|
+| 1      | Update Node             | 
+Command: npm install -g npm@7.21.0                             
+
+| STEP   |Description              |
+|:-------|:------------------------|
+| 2      | Clone Repo              | 
+<b>NOTE:</b> Make a local directory (like your documents) to clone the project and then run 'git clone' based on your git configuration (most would not have SSH set up so do the HTTP method)  
+
+Command - Option 1 (HTTP): <b>git clone https://github.com/anjalikalambe/SES-3A.git</b>
+Command - Option 1 (SSH):  <b>git clone git@github.com:anjalikalambe/SES-3A.git</b> 
+
+| STEP   |Description              |
+|:-------|:------------------------|                    
+| 3      | Install Packages Part 1 | 
+<b>NOTE:</b> CD into <b>/react-backend</b> (this can take a few min) 
+
+Command: <b>npm i</b>        
+
+|:-------|:------------------------|  
+| 4      | Install Packages Part 2 | 
+
+<b>NOTE:</b>
+CD back to the main SRC folder by typing <b> cd .. </b> and then CD into <b>/client</b>
+
+Comand: <b>npm i</b>                       
 
 That's it :) 
 
+<hr style="width:50%">
+<br>
 
 ## Running The Application
 <b>NOTE: Make sure you are in the '/client' directory to run the application</b>
@@ -36,6 +60,8 @@ That's it :)
 1) Back-end Server: Go to '/react-backend' and run <b>npm start</b> - This will trigger the server
 2) Front-end Server: Open a new/second teminal/cmd window in parallel with the server and go to '/client-backend' and run <b>npm start</b> - This will trigger the client/front-end
 
+<hr style="width:50%">
+<br>
 
 ## Build and Deployment Rules
 To ensure we follow a clean and efficient development methodology, we will follow the three-tier branch approach when applying changes. This includes the following:
