@@ -1,4 +1,4 @@
-# SES3A
+# date.io (SES3A)
 
 ## Before Starting
 * Make sure you have Node installed 
