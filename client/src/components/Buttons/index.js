@@ -5,10 +5,10 @@ import { pink, purple, blue } from '@material-ui/core/colors';
 
 export const DarkButton = withStyles((theme) => ({
 	root: {
-		color: theme.palette.getContrastText('#43428C'),
-		backgroundColor: '#43428C',
+		color: theme.palette.getContrastText('#3D3AFD'),
+		backgroundColor: '#3D3AFD',
 		'&:hover': {
-			backgroundColor: blue[800],
+			backgroundColor: blue[2000],
 		},
 		borderRadius: '25px',
 		padding: '5px 40px'
