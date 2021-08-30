@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently \" cd ../react-backend && npm run watch\" \"npm run start\" "
+    "dev": "concurrently \" cd ../backend && npm run watch\" \"npm run start\" "
   },
   "eslintConfig": {
     "extends": [

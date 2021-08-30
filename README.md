@@ -1,4 +1,4 @@
-# SES3A
+# date.io (SES3A)
 
 ## Before Starting
 * Make sure you have Node installed 
@@ -39,7 +39,7 @@ Command - Option 2 (SSH):  <b>git clone git@github.com:anjalikalambe/SES-3A.git<
 | STEP 3 |Install Packages Part 1/2|
 |:-------|:------------------------|                    
 
-<b>NOTE:</b> CD into '<b>/react-backend</b>' 
+<b>NOTE:</b> CD into '<b>/backend</b>' 
 
 Command: <b>npm i</b> - (this can take a few min) 
 
@@ -65,7 +65,7 @@ Command: <b>npm i</b> - (this can take a few min)
 <b>npm run dev</b>
 
 ### Run Back-end and Front-end Separately
-1) Back-end Server: Go to '/react-backend' and run <b>npm start</b> - This will trigger the server
+1) Back-end Server: Go to '/backend' and run <b>npm start</b> - This will trigger the server
 2) Front-end Server: Open a new/second teminal/cmd window in parallel with the server and go to '/client-backend' and run <b>npm start</b> - This will trigger the client/front-end
 
 <hr style="width:50%">
@@ -79,6 +79,7 @@ master
     ┣━━ feature
            ┗━━ task
 ```
+Features are marked as epics on Jira. Create a feature branch after checking Jira epic. 
 
 ### Branch Rules
 
