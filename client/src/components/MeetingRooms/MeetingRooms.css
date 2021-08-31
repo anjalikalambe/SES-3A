@@ -1,0 +1,15 @@
+body {
+	background-image: none;
+}
+
+.meetingRooms {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.header {
+	text-align: center;
+	margin-bottom: 50px;
+}

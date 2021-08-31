@@ -6,7 +6,7 @@ import { DarkButton } from "../Buttons";
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function Header(props) {
+function Header(users) {
 	return (
 		<div className="header">
 			<img className="logo" src={logoImg} />

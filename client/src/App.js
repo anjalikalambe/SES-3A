@@ -19,7 +19,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Header />
+				<Header users={this.state.users} />
 				<div className="box">
 					<div className="text1">
 						Welcome to the world test of virtual love
