@@ -5,6 +5,7 @@ import ProfileCard from "./ProfileCard/ProfileCard";
 const MeetingRooms = () => {
 	const [users, setUsers] = useState([]);
 	const [currentUser, setCurrentUser] = useState({});
+	const [rooms, setRooms] = useState([]);
 
 	useEffect(() => {
 		setCurrentUser({
@@ -23,8 +24,13 @@ const MeetingRooms = () => {
 			.then((user) => setUsers([...user]));
 	}, []);
 
-	console.log(users);
-	console.log(currentUser);
+	useEffect(() => {
+		fetch("/rooms")
+			.then((res) => res.json())
+			.then((room) => setRooms([...room]));
+	}, []);
+
+	console.log(rooms);
 
 	return (
 		<div className="meetingRooms">
