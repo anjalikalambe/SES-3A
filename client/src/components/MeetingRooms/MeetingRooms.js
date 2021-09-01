@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./MeetingRooms.css";
 import ProfileCard from "./ProfileCard/ProfileCard";
+import RoomsList from "./RoomsList/RoomsList";
 
 const MeetingRooms = () => {
 	const [users, setUsers] = useState([]);
 	const [currentUser, setCurrentUser] = useState({});
-	const [rooms, setRooms] = useState([]);
 
 	useEffect(() => {
 		setCurrentUser({
@@ -24,21 +24,14 @@ const MeetingRooms = () => {
 			.then((user) => setUsers([...user]));
 	}, []);
 
-	useEffect(() => {
-		fetch("/rooms")
-			.then((res) => res.json())
-			.then((room) => setRooms([...room]));
-	}, []);
-
-	console.log(rooms);
-
 	return (
 		<div className="meetingRooms">
 			<div className="header">
 				<h1>Meeting Room</h1>
 			</div>
-			<div className="main">
+			<div className="meetingRooms__main">
 				<ProfileCard userInfo={currentUser} />
+				<RoomsList />
 			</div>
 		</div>
 	);
