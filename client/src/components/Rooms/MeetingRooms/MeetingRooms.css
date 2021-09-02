@@ -1,5 +1,7 @@
 body {
 	background-image: none;
+	background-color: #202541;
+	color: white;
 }
 
 .meetingRooms {
@@ -12,6 +14,15 @@ body {
 .header {
 	text-align: center;
 	margin-bottom: 50px;
+	display: flex;
+	flex-direction: row;
+	background-color: #202541;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.header img {
+	margin-right: 20px;
 }
 
 .meetingRooms__main {

@@ -4,7 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import MeetingRooms from "./components/MeetingRooms/MeetingRooms";
+import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
 
 ReactDOM.render(
 	<BrowserRouter>

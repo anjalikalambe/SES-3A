@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./MeetingRooms.css";
 import ProfileCard from "./ProfileCard/ProfileCard";
 import RoomsList from "./RoomsList/RoomsList";
+import roomsIcon from "../../../Assets/MeetingRoomAssets/RoomsIcons.png";
+import OpenRooms from "./OpenRooms/OpenRooms";
 
 const MeetingRooms = () => {
 	const [users, setUsers] = useState([]);
@@ -27,11 +29,13 @@ const MeetingRooms = () => {
 	return (
 		<div className="meetingRooms">
 			<div className="header">
-				<h1>Meeting Room</h1>
+				<img src={roomsIcon} alt="" />
+				<h1>Rooms</h1>
 			</div>
 			<div className="meetingRooms__main">
-				<ProfileCard userInfo={currentUser} />
-				<RoomsList />
+				{/* <ProfileCard userInfo={currentUser} />
+				<RoomsList /> */}
+				<OpenRooms />
 			</div>
 		</div>
 	);

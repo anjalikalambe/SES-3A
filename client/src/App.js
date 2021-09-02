@@ -5,7 +5,7 @@ import { PurpleButton } from "./components/Buttons";
 import { CreamButton } from "./components/Buttons";
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import MeetingRooms from "./components/MeetingRooms/MeetingRooms";
+import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
 
 class App extends Component {
 	state = { users: [] };
