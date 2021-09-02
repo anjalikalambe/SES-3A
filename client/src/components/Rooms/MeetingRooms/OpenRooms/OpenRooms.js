@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import openRoomIcon from "../../../../Assets/MeetingRoomAssets/openRoomIcon.png";
+import personIcon from "../../../../Assets/MeetingRoomAssets/personIcon.png";
+import joinIcon from "../../../../Assets/MeetingRoomAssets/joinIcon.png";
+
 import "./OpenRooms.css";
 
 const OpenRooms = () => {
@@ -20,9 +23,32 @@ const OpenRooms = () => {
 				{rooms.map((room) => {
 					return (
 						<div className="room__info">
-							<p>{room.meetingID}</p>
-							<p>{room.members}</p>
-							<p>{room.joinStatus}</p>
+							<div className="roomName__box">
+								<p>{room.roomName}</p>
+							</div>
+
+							<div className="participantAmount">
+								<img className="personIcon" src={personIcon} />
+								<p>{room.members}</p>
+							</div>
+							<div className="roomStatus">
+								<p>{room.joinStatus ? "Open" : "Closed"}</p>
+							</div>
+							<div className="openRoomStatus">
+								{room.participants.map((participant) => {
+									return (
+										<img
+											className="participant__img"
+											src={participant.profileurl}
+										/>
+									);
+								})}
+							</div>
+
+							<div className="joinRoom__button">
+								<h5>Join Room</h5>
+								<img src={joinIcon} alt="" />
+							</div>
 						</div>
 					);
 				})}
