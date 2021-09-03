@@ -4,15 +4,28 @@ import personIcon from "../../../../Assets/MeetingRoomAssets/personIcon.png";
 import joinIcon from "../../../../Assets/MeetingRoomAssets/joinIcon.png";
 
 import "./OpenRooms.css";
+import RoomInfo from "./RoomInfo/RoomInfo";
 
 const OpenRooms = () => {
 	const [rooms, setRooms] = useState([]);
+	const [roomInfo, setRoomInfo] = useState({});
+	const [showRoom, setShowRoom] = useState(false);
 
 	useEffect(() => {
 		fetch("/rooms")
 			.then((res) => res.json())
 			.then((room) => setRooms([...room]));
 	}, []);
+
+	useEffect(() => {
+		console.log(roomInfo);
+	}, [roomInfo]);
+
+	const roomClickAction = (room) => {
+		setRoomInfo(room);
+		setShowRoom(!showRoom);
+	};
+
 	return (
 		<div className="openRooms__section">
 			<div className="openRooms__header">
@@ -22,7 +35,12 @@ const OpenRooms = () => {
 			<div className="openRooms__roomList">
 				{rooms.map((room) => {
 					return (
-						<div className="room__info">
+						<div
+							className="room__info"
+							onClick={() => {
+								roomClickAction(room);
+							}}
+						>
 							<div className="roomName__box">
 								<p>{room.roomName}</p>
 							</div>
@@ -53,6 +71,7 @@ const OpenRooms = () => {
 					);
 				})}
 			</div>
+			{showRoom && <RoomInfo roomInfo={roomInfo} />}
 		</div>
 	);
 };

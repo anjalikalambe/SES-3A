@@ -1,0 +1,46 @@
+.roomInfo__section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #353b64;
+	border-radius: 0 0 20px 20px;
+	padding: 10px;
+}
+
+.roomInfo__section-top {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 10px;
+}
+
+.roomInfo__name {
+	width: 18%;
+}
+
+.participantImg {
+	width: 20px;
+	border-radius: 20px;
+}
+
+.roomInfoJoin__button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #c83200;
+	height: 32px;
+	padding: 4px;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: 1ms ease-in;
+	width: 20%;
+	margin: auto;
+}
+
+.roomInfoJoin__button:hover {
+	cursor: pointer;
+	transform: translateY(3px);
+}
