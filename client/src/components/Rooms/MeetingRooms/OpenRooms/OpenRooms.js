@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import openRoomIcon from "../../../../Assets/MeetingRoomAssets/openRoomIcon.png";
 import personIcon from "../../../../Assets/MeetingRoomAssets/personIcon.png";
 import joinIcon from "../../../../Assets/MeetingRoomAssets/joinIcon.png";
+import openDoor from "../../../../Assets/MeetingRoomAssets/openDoor.png";
+import closedDoor from "../../../../Assets/MeetingRoomAssets/closedDoor.png";
 
 import "./OpenRooms.css";
 import RoomInfo from "./RoomInfo/RoomInfo";
@@ -48,6 +50,12 @@ const OpenRooms = () => {
 								<p>{room.members}</p>
 							</div>
 							<div className="roomStatus">
+								<img
+									src={
+										room.joinStatus ? openDoor : closedDoor
+									}
+									alt=""
+								/>
 								<p>{room.joinStatus ? "Open" : "Closed"}</p>
 							</div>
 							<div className="openRoomStatus">

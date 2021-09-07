@@ -118,3 +118,15 @@
 	background: white;
 	border-radius: 10px;
 }
+
+.roomStatus {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: left;
+}
+
+.roomStatus img {
+	width: 30px;
+	height: 30px;
+}
