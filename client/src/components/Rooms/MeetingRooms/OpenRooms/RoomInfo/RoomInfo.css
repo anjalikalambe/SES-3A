@@ -7,17 +7,20 @@
 	padding: 10px;
 }
 
+.roomInfo__information {
+	width: 50%;
+}
+
 .roomInfo__section-top {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: center;
-
+	justify-content: center;
 	padding: 10px;
 }
 
 .roomInfo__name {
-	width: 18%;
+	width: 25%;
 }
 
 .participantImg {
@@ -40,7 +43,25 @@
 	margin: auto;
 }
 
+.matches__img {
+	width: 40px;
+	height: 40px;
+}
+
+.roomInfo__matches {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
 .roomInfoJoin__button:hover {
 	cursor: pointer;
 	transform: translateY(3px);
+}
+
+.roomInfo__roomGenders {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }

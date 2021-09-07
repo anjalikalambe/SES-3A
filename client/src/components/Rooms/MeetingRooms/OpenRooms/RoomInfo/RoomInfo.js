@@ -1,6 +1,9 @@
 import React from "react";
 import "./RoomInfo.css";
 import joinIcon from "../../../../../Assets/MeetingRoomAssets/joinIcon.png";
+import maleImg from "../../../../../Assets/MeetingRoomAssets/maleImg.png";
+import femaleIcon from "../../../../../Assets/MeetingRoomAssets/femaleIcon.png";
+import matchesImg from "../../../../../Assets/MeetingRoomAssets/matchesImg.png";
 
 const RoomInfo = ({ roomInfo }) => {
 	return (
@@ -11,9 +14,17 @@ const RoomInfo = ({ roomInfo }) => {
 				</div>
 				<div className="roomInfo__information">
 					<div className="roomInfo__roomGenders">
-						<p>Genders here</p>
+						<p>
+							<img src={maleImg} />
+							{roomInfo.males}
+						</p>
+						<p>
+							<img src={femaleIcon} />
+							{roomInfo.females}
+						</p>
 					</div>
 					<div className="roomInfo__matches">
+						<img className="matches__img" src={matchesImg} alt="" />
 						<p>10 people match your interests.</p>
 					</div>
 				</div>

@@ -10,6 +10,7 @@ const OpenRooms = () => {
 	const [rooms, setRooms] = useState([]);
 	const [roomInfo, setRoomInfo] = useState({});
 	const [showRoom, setShowRoom] = useState(false);
+	const [profile, setProfile] = useState([]);
 
 	useEffect(() => {
 		fetch("/rooms")
@@ -17,13 +18,10 @@ const OpenRooms = () => {
 			.then((room) => setRooms([...room]));
 	}, []);
 
-	useEffect(() => {
-		console.log(roomInfo);
-	}, [roomInfo]);
-
 	const roomClickAction = (room) => {
 		setRoomInfo(room);
-		setShowRoom(!showRoom);
+		setShowRoom(true);
+		setProfile(room.participants.slice(0, 3));
 	};
 
 	return (
@@ -53,14 +51,15 @@ const OpenRooms = () => {
 								<p>{room.joinStatus ? "Open" : "Closed"}</p>
 							</div>
 							<div className="openRoomStatus">
-								{room.participants.map((participant) => {
-									return (
-										<img
-											className="participant__img"
-											src={participant.profileurl}
-										/>
-									);
-								})}
+								{profile &&
+									profile.map((participant) => {
+										return (
+											<img
+												className="participant__img"
+												src={participant.profileurl}
+											/>
+										);
+									})}
 							</div>
 
 							<div className="joinRoom__button">
