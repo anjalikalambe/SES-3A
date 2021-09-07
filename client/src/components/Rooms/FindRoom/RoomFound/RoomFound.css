@@ -4,15 +4,91 @@
 	background-color: #353b64;
 	border-radius: 20px;
 	text-align: center;
+	padding: 15px;
 }
 
 .roomFound__matches {
 	display: flex;
 	flex-direction: column;
+	background-color: #4289f3;
+	border-radius: 14px;
+	align-content: center;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.match__age {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.match__location {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.match__location img {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.match__age img {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
 }
 
 .match {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around !important;
+}
+
+.match__profile {
+	align-items: center;
+	display: flex;
+}
+
+.match__profile img {
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	border: 3px solid #353b64;
+	align-items: center;
+}
+
+.match__interest {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.match__interest img {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.roomFound__joinBtn {
+	display: flex;
+	flex-direction: row;
+	background-color: #c83200;
+	align-items: center;
+	width: 100px;
+	margin: auto;
+	border-radius: 20px;
+	height: 40px;
+	text-align: center;
+	align-content: center;
+	justify-content: center;
+}
+
+.roomFound__joinBtn:hover {
+	cursor: pointer;
+	transform: translateY(-2px);
 }

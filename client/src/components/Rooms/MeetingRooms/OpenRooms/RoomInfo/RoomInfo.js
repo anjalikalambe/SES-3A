@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./RoomInfo.css";
 import joinIcon from "../../../../../Assets/MeetingRoomAssets/joinIcon.png";
 import maleImg from "../../../../../Assets/MeetingRoomAssets/maleImg.png";
 import femaleIcon from "../../../../../Assets/MeetingRoomAssets/femaleIcon.png";
 import matchesImg from "../../../../../Assets/MeetingRoomAssets/matchesImg.png";
+import roomLocked from "../../../../../Assets/MeetingRoomAssets/roomLocked.png";
 
 const RoomInfo = ({ roomInfo }) => {
+	const [status, setStatus] = useState(false);
+	useEffect(() => {
+		setStatus(roomInfo.joinStatus);
+	}, [roomInfo]);
 	return (
 		<div className="roomInfo__section">
 			<div className="roomInfo__section-top">
@@ -40,9 +45,15 @@ const RoomInfo = ({ roomInfo }) => {
 					})}
 				</div>
 			</div>
-			<div className="roomInfoJoin__button">
-				<h5>Join Room</h5>
-				<img src={joinIcon} alt="" />
+			<div
+				className={
+					status
+						? "roomInfoJoin__button"
+						: "roomInfoJoin__buttonClosed"
+				}
+			>
+				<h5>{status ? <h4>Join Room</h4> : <h4>Room Locked</h4>}</h5>
+				<img src={status ? joinIcon : roomLocked} alt="" />
 			</div>
 		</div>
 	);

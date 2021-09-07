@@ -32,6 +32,11 @@
 	margin: auto;
 }
 
+.findRoom__search:hover {
+	cursor: pointer;
+	transform: translateY(2px);
+}
+
 .findRoom__search img {
 	width: 20px;
 	height: 20px;
