@@ -4,6 +4,7 @@ import ProfileCard from "./ProfileCard/ProfileCard";
 import RoomsList from "./RoomsList/RoomsList";
 import roomsIcon from "../../../Assets/MeetingRoomAssets/RoomsIcons.png";
 import OpenRooms from "./OpenRooms/OpenRooms";
+import FindRoom from "../FindRoom/FindRoom";
 
 const MeetingRooms = () => {
 	const [users, setUsers] = useState([]);
@@ -33,9 +34,8 @@ const MeetingRooms = () => {
 				<h1>Rooms</h1>
 			</div>
 			<div className="meetingRooms__main">
-				{/* <ProfileCard userInfo={currentUser} />
-				<RoomsList /> */}
 				<OpenRooms />
+				<FindRoom />
 			</div>
 		</div>
 	);

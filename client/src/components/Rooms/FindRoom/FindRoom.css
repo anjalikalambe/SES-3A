@@ -1,0 +1,49 @@
+.findRoom__section {
+	display: flex;
+	flex-direction: column;
+	flex: 0.5;
+	padding: 10px;
+}
+
+.findRoom__header {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+}
+
+.findRoom__header img {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.findRoom__search {
+	display: flex;
+	flex-direction: row;
+	background-color: #c83200;
+	height: 40px;
+	justify-content: center;
+	border-radius: 10px;
+	text-align: center;
+	align-items: center;
+	width: 140px;
+	margin: auto;
+}
+
+.findRoom__search img {
+	width: 20px;
+	height: 20px;
+}
+
+.roomsFound__section {
+	display: flex;
+	flex-direction: column;
+	flex: 0.8;
+}
+
+.roomsFound__section span {
+	font-weight: 300;
+	text-align: center;
+}

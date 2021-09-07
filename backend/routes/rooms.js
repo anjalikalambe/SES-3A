@@ -9,7 +9,7 @@ router.get("/", function (req, res, next) {
 
 			meetingID: "JAP43ZST0ZL",
 			members: 15,
-			joinStatus: "True",
+			joinStatus: true,
 			males: 4,
 			females: 7,
 			participants: [
@@ -48,7 +48,7 @@ router.get("/", function (req, res, next) {
 
 			meetingID: "QIO00THS1VR",
 			members: 16,
-			joinStatus: "False",
+			joinStatus: false,
 			males: 8,
 			females: 14,
 			participants: [
@@ -87,7 +87,7 @@ router.get("/", function (req, res, next) {
 
 			meetingID: "ADQ88UFO9XU",
 			members: 6,
-			joinStatus: "False",
+			joinStatus: false,
 			males: 9,
 			females: 13,
 			participants: [
@@ -140,7 +140,7 @@ router.get("/", function (req, res, next) {
 
 			meetingID: "BCT75CZJ4GI",
 			members: 10,
-			joinStatus: "True",
+			joinStatus: true,
 			males: 8,
 			females: 4,
 			participants: [
@@ -200,7 +200,7 @@ router.get("/", function (req, res, next) {
 
 			meetingID: "ADQ88UFO9XU",
 			members: 6,
-			joinStatus: "False",
+			joinStatus: false,
 			males: 10,
 			females: 11,
 			participants: [
@@ -267,7 +267,7 @@ router.get("/", function (req, res, next) {
 
 			meetingID: "ADQ88UFO9XU",
 			members: 6,
-			joinStatus: "False",
+			joinStatus: false,
 			males: 4,
 			females: 1,
 			participants: [
@@ -299,7 +299,7 @@ router.get("/", function (req, res, next) {
 
 			meetingID: "ADQ88UFO9XU",
 			members: 6,
-			joinStatus: "False",
+			joinStatus: false,
 			males: 10,
 			females: 10,
 			participants: [

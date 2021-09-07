@@ -1,0 +1,18 @@
+.roomFound__section {
+	display: flex;
+	flex-direction: column;
+	background-color: #353b64;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.roomFound__matches {
+	display: flex;
+	flex-direction: column;
+}
+
+.match {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around !important;
+}

@@ -51,7 +51,7 @@ const OpenRooms = () => {
 								<p>{room.joinStatus ? "Open" : "Closed"}</p>
 							</div>
 							<div className="openRoomStatus">
-								{profile &&
+								{/* {profile &&
 									profile.map((participant) => {
 										return (
 											<img
@@ -59,7 +59,7 @@ const OpenRooms = () => {
 												src={participant.profileurl}
 											/>
 										);
-									})}
+									})} */}
 							</div>
 
 							<div className="joinRoom__button">

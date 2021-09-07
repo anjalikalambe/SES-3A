@@ -1,7 +1,9 @@
 .openRooms__section {
 	display: flex;
 	flex-direction: column;
-	width: 70%;
+	padding-right: 40px;
+	border-right: 1px solid white;
+	flex: 0.7;
 }
 
 .openRooms__roomList {
