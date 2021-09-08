@@ -7,7 +7,7 @@ function PurpleContainer(props){
 	const classes = makeStyles({
 		root: {
 			width: props.width,
-			backgroundColor: '#4C49F8',
+			backgroundColor: '#7573F9',
 			minHeight: 400,
 			padding: 20,
 			margin: '50px auto',
