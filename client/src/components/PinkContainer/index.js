@@ -2,13 +2,13 @@ import { FormHelperText } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 
-function GrayContainer(props){
+function PinkContainer(props){
 	const classes = makeStyles({
 		root: {
-			width: props.width,
-			backgroundColor: '#808080',
+            width: props.width,
+			backgroundColor: '#FFC0CB',
 			minHeight: "80%",
-			left: "25%",
+            right: "25%",
 			padding: 30,
 			position: 'absolute'
 		},
@@ -20,4 +20,4 @@ function GrayContainer(props){
 	)
 }
 
-export default GrayContainer;
+export default PinkContainer;

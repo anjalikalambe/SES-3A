@@ -2,15 +2,15 @@ import { FormHelperText } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 
-function GrayContainer(props){
+function BlueContainer(props){
 	const classes = makeStyles({
 		root: {
-			width: props.width,
-			backgroundColor: '#808080',
-			minHeight: "80%",
-			left: "25%",
-			padding: 30,
-			position: 'absolute'
+            width: props.width,
+			backgroundColor: '#7573F9',
+			minHeight: 500,
+			padding: 20,
+			margin: '50px auto',
+            position: 'relative'
 		},
 	})();
 	return(
@@ -20,4 +20,4 @@ function GrayContainer(props){
 	)
 }
 
-export default GrayContainer;
+export default BlueContainer;
