@@ -59,8 +59,8 @@ export const RedButton = withStyles((theme) => ({
 		'&:hover': {
 			backgroundColor: red[500],
 		},
-		borderRadius: '15px',
-		padding: '10px 50px',		
+		borderRadius: '25px',
+		padding: '5px 40px'
 	},
 }))(Button);
 

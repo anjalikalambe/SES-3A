@@ -1,17 +1,13 @@
-.box1 {
-    position: absolute;
-    height: 10%;
-    width: 20%;
-    top: 10px;
-    left: 50%;
+.card {
+    height: 350px;
+    width: 300px;
+    margin: 50px 64px;
+    float: left;
 }
 
-.box1 {
-    position: absolute;
-    height: 10%;
-    width: 20%;
-    top: 10px;
-    left: 50%;
-  }
-  
-  
+.button {
+    height: 50px;
+    width: 150px;
+    position: flex;
+    flex-direction: column;
+}
