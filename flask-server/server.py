@@ -1,7 +1,14 @@
-from flask import Flask
+from flask import Flask, send_from_directory
+from flask_socketio import SocketIO, close_room, join_room, leave_room, send
+import socketio
 
 app = Flask(__name__)
+# app = Flask(__name__, static_url_path="", static_folder="../client/build")
+socketio = SocketIO(app)
 
+# @app.route("/", defaults={"path": ""})
+# def serve(path):
+#     return send_from_directory(app.static_folder, "index.html")
 
 # Members API Route
 
@@ -9,6 +16,33 @@ app = Flask(__name__)
 def members():
     return {"members": ["Member 1", "Member 2", "Member 2"]}
 
+# Private chat message handler
+@socketio.on("message")
+def handle_message(data):
+    print("Message: {}".format(data))
+    send(data, to=data["room"])
+
+# Chat room handler for one-on-one conversations
+@socketio.on("join")
+def on_join(data):
+    username = data["username"]
+    room = data["room"]
+    join_room(room)
+
+# Leaving a chat room
+@socketio.on("leave")
+def on_leave(data):
+    username = data["username"]
+    room = data["room"]
+    leave_room(room)
+    send("{} has left the chat.".format(username), to=room)
+
+# Remove both users and delete the room.
+@socketio.on("destroy chat")
+def on_destroy_chat(data):
+    room = data["room"]
+    close_room(room)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(debug=True)
+    socketio.run(app)
