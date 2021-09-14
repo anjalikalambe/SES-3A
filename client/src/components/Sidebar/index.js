@@ -1,7 +1,8 @@
 import React from 'react';
 import './Sidebar.css'
 import { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
+import * as BsIcons from 'react-icons/bs';
+import * as BiIcons from 'react-icons/bi';
 
 const Sidebar = (props) => {
     const [inactive, setInactive] = useState(false);
@@ -16,7 +17,7 @@ const Sidebar = (props) => {
                     setInactive(!inactive);
                 }}          
             className="toggle-menu-btn">
-            <FaIcons.FaBeer/>
+            <BiIcons.BiCaretLeft/>
             </div>
         </div>
         <div className="divider"></div>
@@ -25,23 +26,37 @@ const Sidebar = (props) => {
                 <li>
                     <a className='menu-item'>
                        <div className="menu-icon">
-                       <FaIcons.FaBeer/>
+                       <BiIcons.BiHomeAlt/>
                        </div>
                         <span>Dashboard</span></a>
                 </li>
                 <li>
                     <a className='menu-item'>
                        <div className="menu-icon">
-                       <FaIcons.FaBeer/>
+                       <BiIcons.BiChat/>
                        </div>
                        <span>Messages</span></a>
                 </li>
                 <li>
                     <a className='menu-item'>
                        <div className="menu-icon">
-                       <FaIcons.FaBeer/>
+                       <BsIcons.BsExclamationTriangleFill/>
                        </div>
                        <span>Report</span></a>
+                </li>
+                <li>
+                    <a className='menu-item'>
+                       <div className="menu-icon">
+                       <BsIcons.BsGear/>
+                       </div>
+                       <span>Settings</span></a>
+                </li>
+                <li>
+                    <a className='menu-item'>
+                       <div className="menu-icon">
+                       <BiIcons.BiLogOut/>
+                       </div>
+                       <span>Log Out</span></a>
                 </li>
             </ul>
         </div>
