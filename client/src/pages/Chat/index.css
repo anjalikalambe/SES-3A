@@ -1,0 +1,42 @@
+.chat-container{
+    max-height: 400px;
+    overflow: auto !important;
+    position: relative;
+    width: 100%;
+}
+
+.title{
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.chat-container .chat-item{
+margin: 12px 0;
+}
+
+.me,.other{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.other{
+    justify-content: flex-start;
+}
+
+.me-message{
+    color: #fff;
+    margin-right: 8px;
+}
+
+.other-message{
+    color: #fff;
+    margin-left: 8px;
+}
+
+
+.name{
+    float: left;
+    color: #282c34;
+}

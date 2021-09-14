@@ -14,7 +14,7 @@ function PurpleContainer(props){
 		},
 	})();
 	return(
-		<Card className={classes.root}>
+		<Card className={`${classes.root} ${props.className}`}>
 			{props.children}
 		</Card>
 	)
