@@ -54,6 +54,8 @@ CD back to the main SRC folder by typing <b> 'cd ..' </b> and then CD into '<b>/
 
 Command: <b>npm i</b> - (this can take a few min)  
 
+<hr style="width:50%">
+<br>
 
 ## Python / Flask Setup
 
