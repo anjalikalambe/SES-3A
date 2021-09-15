@@ -6,17 +6,22 @@ import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
 
 class App extends Component {
-	state = {users: []};
+
+	state = {users: [], data: []};
 
 	componentDidMount() {
-		fetch('/users')
+		// fetch('/users') //running port3000
+		// 	.then(res => res.json())
+		// 	.then(users => this.setState({users}));
+
+		fetch('/members')
 			.then(res => res.json())
-			.then(users => this.setState({users}));
+			.then(data => this.setState({data}, console.log(data)));
 	}
 
 	render() {
 		return (
-			<div className="App">
+			<div className="App">	
 				<Router>
 					<Header/>
 					<Switch>
@@ -28,6 +33,17 @@ class App extends Component {
 						</Route>
 					</Switch>
 				</Router>
+
+				{/* example api succesful fetch */}
+				<div>
+					{(typeof this.state.data.members === 'undefined') ? (
+						<p>...loading</p>
+					) : (
+						this.state.data.members.map((member, i) => (
+							<p key={i}>{member}</p>
+						))
+					)}
+				</div>
 			</div>
 		);
 	}
