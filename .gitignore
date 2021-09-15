@@ -1,1 +1,3 @@
 /react-backend
+/venv/*
+/.venv/*
