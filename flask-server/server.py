@@ -1,10 +1,10 @@
 from flask import Flask, send_from_directory
-from flask_socketio import SocketIO, close_room, join_room, leave_room, send
+from flask_socketio import SocketIO, close_room, join_room, leave_room, send, emit
 import socketio
 
 app = Flask(__name__)
 # app = Flask(__name__, static_url_path="", static_folder="../client/build")
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="http://localhost:3000")
 
 # @app.route("/", defaults={"path": ""})
 # def serve(path):
@@ -17,10 +17,10 @@ def members():
     return {"members": ["Member 1", "Member 2", "Member 2"]}
 
 # Private chat message handler
-@socketio.on("message")
+@socketio.on("private_message")
 def handle_message(data):
-    print("Message: {}".format(data))
-    send(data, to=data["room"])
+    print("Message: {}".format(data["message"]))
+    emit("private_response", data["message"], to=data["target"])
 
 # Chat room handler for one-on-one conversations
 @socketio.on("join")
