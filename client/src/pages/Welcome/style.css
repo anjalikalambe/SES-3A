@@ -1,0 +1,29 @@
+.box{
+  height: 300px;
+  width: 500px;
+  margin: 100px 150px;
+}
+
+.box2{
+  margin: 25px;
+}
+
+.text1{
+  color: #43428C;
+  font-size: 50px;
+  font-weight:bold;
+}
+
+.text2{
+  color: #6160AD;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.bgImage{
+  width:700px;
+  height: 400px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

@@ -1,3 +1,7 @@
+body {
+  background-color: #FFFFFF;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.box{
+  height: 300px;
+  width: 500px;
+  margin: 100px 150px;
+}
+
+.box2{
+  margin: 25px;
+}
+
+.text1{
+  color: #43428C;
+  font-size: 50px;
+  font-weight:bold;
+}
+
+.text2{
+  color: #6160AD;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+joinroom{
+  margin: 0px 80px;
 }
