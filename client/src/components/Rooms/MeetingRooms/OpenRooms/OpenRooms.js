@@ -17,7 +17,8 @@ const OpenRooms = () => {
 	useEffect(() => {
 		fetch("/rooms")
 			.then((res) => res.json())
-			.then((room) => setRooms([...room]));
+			.then((room) => setRooms([...room]))
+			.then((room) => console.log(room));
 	}, []);
 
 	const roomClickAction = (room) => {
@@ -32,7 +33,7 @@ const OpenRooms = () => {
 				<img src={openRoomIcon} alt="" />
 				<h3>Open Rooms</h3>
 			</div>
-			<div className="openRooms__roomList">
+			{/* <div className="openRooms__roomList">
 				{rooms.map((room) => {
 					return (
 						<div
@@ -59,7 +60,7 @@ const OpenRooms = () => {
 								<p>{room.joinStatus ? "Open" : "Closed"}</p>
 							</div>
 							<div className="openRoomStatus">
-								{/* {profile &&
+								{profile &&
 									profile.map((participant) => {
 										return (
 											<img
@@ -67,7 +68,7 @@ const OpenRooms = () => {
 												src={participant.profileurl}
 											/>
 										);
-									})} */}
+									})}
 							</div>
 
 							<div className="joinRoom__button">
@@ -77,7 +78,7 @@ const OpenRooms = () => {
 						</div>
 					);
 				})}
-			</div>
+			</div> */}
 			{showRoom && <RoomInfo roomInfo={roomInfo} />}
 		</div>
 	);
