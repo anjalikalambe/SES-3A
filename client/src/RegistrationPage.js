@@ -25,8 +25,24 @@ class RegistrationPage extends Component {
                 <div class="form-group"> 
                 <input type="text" id="firstname" name="firstname" placeholder="First Name">
             </input>
+            </div>
+            <div class="form-group"> 
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+            </input>
+            </div>
+            <div class="form-group"> 
+                <input type="text" id="email" name="email" placeholder="Your email adress">
+            </input>
+              </div>
+            <div class="form-group"> 
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" min="18" max="100">
+          </input>
+         </div>
+         <div class="form-group"> 
         <button type="submit" form="login" value="Submit">Sign up</button>
          </div>
+
        </form>
                 </div>
                
