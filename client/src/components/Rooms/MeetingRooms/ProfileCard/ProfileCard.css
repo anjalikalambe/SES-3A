@@ -1,0 +1,12 @@
+.profilecard img {
+	width: 80px;
+	border-radius: 50%;
+	border: 2px solid black;
+}
+
+.profilecard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
