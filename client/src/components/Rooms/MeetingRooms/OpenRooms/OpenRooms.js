@@ -26,10 +26,6 @@ const OpenRooms = () => {
 		setProfile(room.participants.slice(0, 3));
 	};
 
-	useEffect(() => {
-		console.log(rooms);
-	}, [rooms]);
-
 	return (
 		<div className="openRooms__section">
 			<div className="openRooms__header">
@@ -72,7 +68,7 @@ const OpenRooms = () => {
 								</div>
 								<div className="openRoomStatus">
 									{profile &&
-										profile.map((participant) => {
+										room.participants.map((participant) => {
 											return (
 												<img
 													className="participant__img"
@@ -81,6 +77,9 @@ const OpenRooms = () => {
 											);
 										})}
 								</div>
+								{room.participants.map((participant) => {
+									console.log(participant);
+								})}
 
 								<div className="joinRoom__button">
 									<h5>Join Room</h5>
