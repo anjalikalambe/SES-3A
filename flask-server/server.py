@@ -33,6 +33,70 @@ def rooms():
 
 			"meetingID": "ADQ88UFO9XU",
 			"members": 6,
+			"joinStatus": True,
+			"males": 4,
+			"females": 1,
+			"participants": [
+				{
+					"id": 234423,
+					"firstname": "Hi",
+					"lastname": "There",
+					"profileurl":
+						"https://monteluke.com.au/wp-content/gallery/linkedin-profile-pictures/1.jpg",
+				},
+				{
+					"id": 1543,
+					"firstname": "Test",
+					"lastname": "Account",
+					"profileurl":
+						"https://monteluke.com.au/wp-content/gallery/linkedin-profile-pictures/1.jpg",
+				},
+				{
+					"id": 1543,
+					"firstname": "Test",
+					"lastname": "Account",
+					"profileurl":
+						"https://monteluke.com.au/wp-content/gallery/linkedin-profile-pictures/1.jpg",
+				},
+			],
+		},
+		{
+			"roomName": "Studying Room",
+
+			"meetingID": "ADQ88UFO9XU",
+			"members": 6,
+			"joinStatus": False,
+			"males": 4,
+			"females": 1,
+			"participants": [
+				{
+					"id": 234423,
+					"firstname": "Hi",
+					"lastname": "There",
+					"profileurl":
+						"https://monteluke.com.au/wp-content/gallery/linkedin-profile-pictures/1.jpg",
+				},
+				{
+					"id": 1543,
+					"firstname": "Test",
+					"lastname": "Account",
+					"profileurl":
+						"https://monteluke.com.au/wp-content/gallery/linkedin-profile-pictures/1.jpg",
+				},
+				{
+					"id": 1543,
+					"firstname": "Test",
+					"lastname": "Account",
+					"profileurl":
+						"https://monteluke.com.au/wp-content/gallery/linkedin-profile-pictures/1.jpg",
+				},
+			],
+		},
+		{
+			"roomName": "Studying Room",
+
+			"meetingID": "ADQ88UFO9XU",
+			"members": 6,
 			"joinStatus": False,
 			"males": 4,
 			"females": 1,
