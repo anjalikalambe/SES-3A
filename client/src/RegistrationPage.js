@@ -23,14 +23,14 @@ class RegistrationPage extends Component {
                 <h1>Sign up</h1>
                 </div>
                 <div class="form-group"> 
-                <input type="text" id="firstname" name="firstname" placeholder="First Name">
+                <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
             </input>
 
-                <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
             </input>
             </div>
             <div class="form-group"> 
-                <input type="text" id="email" name="email" placeholder="Your email adress">
+                <input type="text" id="email" name="email" placeholder="Your email adress" required> 
             </input>
               </div>
             <div class="form-group">
@@ -52,20 +52,20 @@ class RegistrationPage extends Component {
          <div class="form-group"> 
          <div class="column-group">
               <label for="country">Country of residence</label>
-               <input type="text" id="country" name="country" placeholder="Your country of residence">
+               <input type="text" id="country" name="country" placeholder="Your country of residence" >
             </input>
             </div>
             </div>
          <div class="form-group">
-         <input type="password" id="password" name="password" placeholder="Enter password">
+         <input type="password" id="password" name="password" placeholder="Enter password" required>
           </input>
     
       
-         <input type="confirmpassword" id="confirmpassword" name="confirmpassword" placeholder="Confirm password">
+         <input type="confirmpassword" id="confirmpassword" name="confirmpassword" placeholder="Confirm password" required>
           </input>
          </div>
          <div class="form-group"> 
-        <button type="submit" form="login" value="Submit">Create account</button>
+        <button type="submit" form="signup" value="Submit">Create account</button>
          </div>
          <div class="form-group"> 
           <p>Have an account?<a href="/"> Log in here</a></p>
