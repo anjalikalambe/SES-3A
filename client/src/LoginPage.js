@@ -23,11 +23,11 @@ class LoginPage extends Component {
                 <h1>Sign in</h1>
                 </div>
                 <div class="form-group"> 
-                <input type="text" id="email" name="email" placeholder="Email">
+                <input type="text" id="email" name="email" placeholder="Email" >
             </input>
               </div>
               <div class="form-group">
-           <input type="password" id="password" name="password" placeholder="Password">
+           <input type="password" id="password" name="password" placeholder="Password" required>
          </input>
        </div>
        <div class="form-group">
