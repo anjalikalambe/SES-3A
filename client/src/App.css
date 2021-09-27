@@ -1,10 +1,5 @@
 body {
   background-color: #FFFFFF;
-  background-image: url("./icon.png");
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-attachment: fixed;
-  background-size: 700px 400px;
 }
 
 .App {

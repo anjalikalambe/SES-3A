@@ -41,3 +41,15 @@ export const CreamButton = withStyles((theme) => ({
 	},
 }))(Button);
 
+export const DarkPurpleButton = withStyles((theme) => ({
+	root: {
+		color: theme.palette.getContrastText('#43428C'),
+		backgroundColor: '#43428C',
+		'&:hover': {
+			backgroundColor: blue[2000],
+		},
+		borderRadius: '25px',
+		padding: '5px 40px'
+	},
+}))(Button);
+
