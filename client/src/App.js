@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
+import Room from "./pages/Rooms";
 
 class App extends Component {
 
@@ -25,12 +26,16 @@ class App extends Component {
 				<Router>
 					<Header/>
 					<Switch>
+						<Route path="/rooms">
+							<Room/>
+						</Route>
 						<Route path="/profile">
 							<Profile/>
 						</Route>
 						<Route path="/">
 							<Welcome/>
 						</Route>
+						
 					</Switch>
 				</Router>
 

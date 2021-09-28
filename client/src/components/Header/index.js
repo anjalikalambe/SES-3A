@@ -14,7 +14,7 @@ function Header(props) {
 				<Link component={RouterLink} to="/" className="navigation">
 					HOME
 				</Link>
-				<Link href="#" className="navigation">
+				<Link className="navigation" component={RouterLink} to="/rooms">
 					ROOMS
 				</Link>
 				<Link href="#" className="navigation">
