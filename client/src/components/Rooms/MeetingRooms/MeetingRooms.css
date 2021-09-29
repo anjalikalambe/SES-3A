@@ -1,14 +1,17 @@
-body {
+/* body {
 	background-image: none;
 	background-color: #202541;
 	color: white;
-}
+} */
 
 .meetingRooms {
 	width: 80%;
 	display: flex;
 	flex-direction: column;
 	margin: auto;
+	/* background-image: none;
+	background-color: #202541;
+	color: white; */
 }
 
 .header {
@@ -16,7 +19,7 @@ body {
 	margin-bottom: 50px;
 	display: flex;
 	flex-direction: row;
-	background-color: #202541;
+	/* background-color: #202541; */
 	justify-content: center;
 	margin-top: 50px;
 }
