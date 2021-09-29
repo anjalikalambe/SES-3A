@@ -23,7 +23,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently \" cd ../flask-server && python3 server.py\" \"npm run start\" ",
-    "dev2": "concurrently \" cd ../backend && npm run watch\" \"npm run start\" "
+    "dev2": "concurrently \" cd ../backend && npm run watch\" \"npm run start\" ",
+    "jup": "python -m notebook"
   },
   "eslintConfig": {
     "extends": [

@@ -1,6 +1,6 @@
-Name,Age,Gender,Sport,Tv Show,Pet,Hobbies,Career 
-Rob,27,,,,,,
-Michael,29,,,,,,
+Name,Age,Gender,Sport,Tv Show,Pet,Hobbies,Career,Cluster
+Rob,27,Male,Football,How I Met Your Mother,Dog,Skiing,Lawyer,1
+Michael,29,Other,Football,Suits,Snake,Running,Graphic Designer,3
 Mohan,29,,,,,,
 Ismail,28,,,,,,
 Kory,42,,,,,,
