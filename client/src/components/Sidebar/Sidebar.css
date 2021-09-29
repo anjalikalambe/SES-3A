@@ -9,53 +9,30 @@ li{
 .side-menu {
     position: fixed;
     height: 100%;
-    width: 300px;
+    width: 250px;
     background-color:rgb(65, 48, 212);
     box-sizing: border-box;
-    padding: 30px 20px;
+    padding: 200px 20px 0 20px;
     transition: width .2s ease-in;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .side-menu.inactive{
-    width: 80px;
-    
-
+    width: 60px;
 }
 
 .side-menu .top-section{
     position: relative;
-}
-
-.side-menu .logo{
-    width: 40px;
-    height: 40px;
-    overflow: hidden;
-    display: inline-block;
-}
-
-.side-menu .top-section .logo img{
-    max-width: 100%;
-    max-height: 100%;
+    top: -150px;
 }
 
 .side-menu .top-section .toggle-menu-btn{
-    color: darkseagreen;
+    color: #fff;
     font-size: 20px;
     position: absolute;
-    top: 50%;
-    right: -50px;    
-    transform: translateY(-50%)
-}
-
-.side-menu.inactive .top-section .toggle-menu-btn{
-    right: -50px;
-}
-
-.divider{
-    width: 100px;
-    height: 1px;
-    border-radius: 1px;
-    background: #fff;
+    top: 0px;
+    right: -10px;    
+    transform: translateX(-50%) 
 }
 
 .side-menu .main-menu .menu-item{
@@ -64,7 +41,9 @@ li{
     font-size: 15px;
     display: block;
     font-weight: 600;
-    
+    position: relative;
+    padding: 20px 0 0 0;
+
 }
 
 .side-menu .main-menu .menu-item span{
@@ -73,6 +52,8 @@ li{
     line-height: 40px;
     opacity: 1;
     transition: opacity .2s ease-in;
+    left: 80px;
+    bottom: 2px;
 }
 
 .side-menu.inactive .main-menu .menu-item span{
@@ -82,14 +63,34 @@ li{
     overflow: hidden;
 }
 
-.side-menu .main-menu .menu-item .menu-icon {
+.side-menu .main-menu .menu-item .menu-icon{ 
     display: inline-block;
     height: 40px;
-    width: 40px;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 40px;
     text-align: center;
-    color: #fff
+    color: #fff;
+    right: 50px;
+    padding: 24px 20 20 0;
+    position: relative;
+}
+
+.side-menu.inactive .main-menu .menu-item .menu-icon{
+    display: inline-block;
+    height: 40px;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: static;
+}
+
+.side-menu .main-menu .menu-item .menu-icon .iconlink{
+    color: rgb(255, 255, 255);
+}
+
+.side-menu .main-menu .menu-item .textlink{
+    color: rgb(255, 255, 255);
 }
 
 .side-menu .main-menu{
@@ -98,9 +99,69 @@ li{
 
 .footer{
     width: 100%;
-    height: 100px;
-    background: rgb(65, 48, 212);
+    height: 150px;
+    background-color:rgb(65, 48, 212);
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 0;
+    border-radius: 0px 0px 20px;
 }
+
+.footer .bottom-menu{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    font-weight: 600;
+    position: relative;
+}
+
+.side-menu .footer .bottom-menu span{
+    position: absolute;
+    display: inline-block;
+    line-height: 40px;
+    opacity: 1;
+    transition: opacity .2s ease-in;
+    left: 100px;
+    bottom: 2px;
+    padding: 40px 0 0 0;
+}
+
+.side-menu.inactive .footer .bottom-menu span{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.bottom-icon{
+    display: inline-block;
+    height: 40px;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    right: 50px;
+    padding: 24px 0 0 0;
+    position: relative;
+}
+
+.side-menu.inactive .footer .bottom-menu .bottom-icon{
+    font-size: 25px;
+    padding: 24px 0 0 0;
+    color: #fff;
+    position: static;
+}
+
+.side-menu .footer .bottom-menu .bottom-icon .iconlink{
+    color: #fff;
+}
+
+.side-menu .footer .bottom-menu .textlink{
+    color: #fff;
+}
+
+
+
+
+

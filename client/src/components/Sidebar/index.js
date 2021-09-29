@@ -3,65 +3,85 @@ import './Sidebar.css'
 import { useState } from 'react';
 import * as BsIcons from 'react-icons/bs';
 import * as BiIcons from 'react-icons/bi';
+import {Link as RouterLink} from "react-router-dom";
+import Link from '@material-ui/core/Link';
+
+
 
 const Sidebar = (props) => {
-    const [inactive, setInactive] = useState(false);
+    const [inactive, setInactive] = useState(true);
 
     return (
     <>
     <div className={`side-menu ${inactive ? "inactive" : ''}`}>
-        <div className='top-section'>
-            
+        <div className='top-section'> 
             <div 
                 onClick={() => {
                     setInactive(!inactive);
                 }}          
             className="toggle-menu-btn">
-            <BiIcons.BiCaretLeft/>
+                {inactive ? <BiIcons.BiCaretRight/> : <BiIcons.BiCaretLeft/>}
             </div>
+            
         </div>
-        <div className="divider"></div>
         <div className="main-menu">
-            <ul>
                 <li>
                     <a className='menu-item'>
                        <div className="menu-icon">
-                       <BiIcons.BiHomeAlt/>
+                       <Link className="iconlink" component={RouterLink} to="/">
+                           <BiIcons.BiHomeAlt/>
+                           </Link>
                        </div>
-                        <span>Dashboard</span></a>
+                       <Link className="textlink" component={RouterLink} to="/">
+                        <span>Dashboard</span></Link>
+                        </a>  
                 </li>
                 <li>
                     <a className='menu-item'>
                        <div className="menu-icon">
+                       <Link className="iconlink" component={RouterLink} to="/">
                        <BiIcons.BiChat/>
+                       </Link>
                        </div>
-                       <span>Messages</span></a>
+                       <Link className="textlink" component={RouterLink} to="/">
+                       <span>Messages</span> </Link>
+                       </a>
                 </li>
                 <li>
                     <a className='menu-item'>
                        <div className="menu-icon">
+                       <Link className="iconlink" component={RouterLink} to="/">
                        <BsIcons.BsExclamationTriangleFill/>
+                       </Link>
                        </div>
-                       <span>Report</span></a>
+                       <Link className="textlink" component={RouterLink} to="/">
+                       <span>Report</span>
+                       </Link></a>
                 </li>
-                <li>
-                    <a className='menu-item'>
-                       <div className="menu-icon">
-                       <BsIcons.BsGear/>
-                       </div>
-                       <span>Settings</span></a>
-                </li>
-                <li>
-                    <a className='menu-item'>
-                       <div className="menu-icon">
-                       <BiIcons.BiLogOut/>
-                       </div>
-                       <span>Log Out</span></a>
-                </li>
-            </ul>
         </div>
 
-        <div className='footer'></div>
+        <div className='footer'>
+        <li>
+                    <a className='bottom-menu'>
+                       <div className="bottom-icon">
+                       <Link className="iconlink" component={RouterLink} to="/">
+                       <BsIcons.BsGear/>
+                       </Link>
+                       </div>
+                       <Link className="textlink" component={RouterLink} to="/">
+                       <span>Settings</span></Link></a>
+                </li>
+                <li>
+                    <a className='bottom-menu'>
+                       <div className="bottom-icon">
+                       <Link className="iconlink" component={RouterLink} to="/">
+                       <BiIcons.BiLogOut/>
+                       </Link>
+                       </div>
+                       <Link className="textlink" component={RouterLink} to="/">
+                       <span>Log Out</span></Link></a>
+                </li>
+        </div>
 
         
         

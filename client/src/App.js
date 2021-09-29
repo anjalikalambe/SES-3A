@@ -19,14 +19,9 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<div className="App">					
 				<Router>
-					<Sidebar/>
-					<Switch>
-						<Route path='/features' />
-					</Switch>
-					</Router>
-				<Router>
+				<Sidebar/>
 					<Header/>
 					<Switch>
 						<Route path="/profile">
