@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
 import Features from "./pages/Features";
+import Reports from "./pages/Features/Reports";
 
 class App extends Component {
 	state = {users: []};
@@ -17,7 +18,7 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<div className="App">					
 				<Router>
 					<Header/>
 					<Switch>
@@ -26,6 +27,9 @@ class App extends Component {
 						</Route>
 						<Route path="/features">
 							<Features/>
+						</Route>
+						<Route path="/reports">
+							<Reports/>
 						</Route>
 						<Route path="/">
 							<Welcome/>
