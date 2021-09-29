@@ -18,7 +18,7 @@ def members():
 
 # Private chat message handler
 @socketio.on("private_message")
-def handle_message(data):
+def handle_private_message(data):
     print("Message: {}".format(data["message"]))
     emit("private_response", data["message"], to=data["target"])
 
