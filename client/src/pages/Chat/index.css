@@ -27,16 +27,41 @@ margin: 12px 0;
 
 .me-message{
     color: #fff;
-    margin-right: 8px;
+    margin-right: 12px;
 }
 
 .other-message{
     color: #fff;
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 
 .name{
     float: left;
     color: #282c34;
+}
+
+.chat-img{
+    width: 80px;
+    margin-left: 12px;
+}
+
+.chat-img-me{
+    width: 80px;
+    margin-right: 12px;
+}
+
+.input-wrapper{
+    display: flex;
+}
+
+.chat-input > #bootstrap-input {
+    border-radius: 4px 0 0 4px;
+}
+
+.add-icon{
+    width: 41px;
+    height: 41px;
+    margin-top: 24px;
+    cursor: pointer;
 }
