@@ -89,50 +89,6 @@ const OpenRooms = () => {
 						);
 					})
 				)}
-				{/* {rooms.map((room) => {
-					return (
-						<div
-							className="room__info"
-							onClick={() => {
-								roomClickAction(room);
-							}}
-						>
-							<div className="roomName__box">
-								<p>{room.roomName}</p>
-							</div>
-
-							<div className="participantAmount">
-								<img className="personIcon" src={personIcon} />
-								<p>{room.members}</p>
-							</div>
-							<div className="roomStatus">
-								<img
-									src={
-										room.joinStatus ? openDoor : closedDoor
-									}
-									alt=""
-								/>
-								<p>{room.joinStatus ? "Open" : "Closed"}</p>
-							</div>
-							<div className="openRoomStatus">
-								{profile &&
-									profile.map((participant) => {
-										return (
-											<img
-												className="participant__img"
-												src={participant.profileurl}
-											/>
-										);
-									})}
-							</div>
-
-							<div className="joinRoom__button">
-								<h5>Join Room</h5>
-								<img src={joinIcon} alt="" />
-							</div>
-						</div>
-					);
-				})} */}
 			</div>
 			{showRoom && <RoomInfo roomInfo={roomInfo} />}
 		</div>

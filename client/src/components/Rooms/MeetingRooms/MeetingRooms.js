@@ -41,9 +41,4 @@ const MeetingRooms = () => {
 	);
 };
 
-// {users &&
-//     users.map(({ firstname, lastname, location, id }) => {
-//         return <p>{firstname}</p>;
-//     })}
-
 export default MeetingRooms;
