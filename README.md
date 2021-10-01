@@ -52,9 +52,50 @@ Command: <b>npm i</b> - (this can take a few min)
 <b>NOTE:</b>
 CD back to the main SRC folder by typing <b> 'cd ..' </b> and then CD into '<b>/client</b>'
 
-Command: <b>npm i</b> - (this can take a few min)                    
+Command: <b>npm i</b> - (this can take a few min)  
 
+<hr style="width:50%">
+<br>
 
+## Python / Flask Setup
+
+| STEP 1 |Install Packages Part 1/2|
+|:-------|:------------------------|  
+
+<b>NOTE:</b>
+Launch CMD or Terminal and check if you have python3 installed with the following command: python --version
+
+If a version DOES show up, please skip to STEP 2. 
+
+PC: If not please run the following command: 'python'. This will take you to the windows store, choose python 3.9 and click 'get' and that should install
+MAC: https://www.python.org/downloads/release/python-397/ download and install this 
+
+<hr>
+<br>
+
+| STEP 2 |Install Packages Part 2/2|
+|:-------|:------------------------| 
+
+Go into the 'flask-server' directory and type the following command in CMD or Terminal 'pip3 install Flask'
+
+<hr style="width:50%">
+<br>
+
+## Jupyter Setup / Run
+
+| STEP 1 |Locate Python Path - Part (1/2)            |
+|:-------|:------------------------------------------|  
+
+Launch cmd / terminal and type <b>'where.exe python'</b>. Once found cd into this directory and type the following <b>pip install notebook</b>
+
+<hr>
+<br>
+    
+| STEP 2 |cd into the ML directory & run - Part (2/2)|
+|:-------|:------------------------------------------|  
+
+To Run Jupyter notebook, type the following command <b>'python -m notebook'</b>. This will launch a local host, make your way to the <b>'user_match_model.ipynb'</b> file and proceed to run the python file
+    
 <hr style="width:50%">
 <br>
 
