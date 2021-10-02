@@ -5,6 +5,8 @@ import RoomsList from "./RoomsList/RoomsList";
 import roomsIcon from "../../../Assets/MeetingRoomAssets/RoomsIcons.png";
 import OpenRooms from "./OpenRooms/OpenRooms";
 import FindRoom from "../FindRoom/FindRoom";
+import Sidebar from "../../../components/Sidebar"
+
 
 const MeetingRooms = () => {
 	const [users, setUsers] = useState([]);
@@ -28,6 +30,8 @@ const MeetingRooms = () => {
 	}, []);
 
 	return (
+		<>
+		<Sidebar />
 		<div className="meetingRooms">
 			<div className="header">
 				<img src={roomsIcon} alt="" />
@@ -38,6 +42,7 @@ const MeetingRooms = () => {
 				<FindRoom />
 			</div>
 		</div>
+		</>
 	);
 };
 

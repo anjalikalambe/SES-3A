@@ -5,6 +5,7 @@ import joinIcon from "../../../../Assets/MeetingRoomAssets/joinIcon.png";
 import openDoor from "../../../../Assets/MeetingRoomAssets/openDoor.png";
 import closedDoor from "../../../../Assets/MeetingRoomAssets/closedDoor.png";
 
+
 import "./OpenRooms.css";
 import RoomInfo from "./RoomInfo/RoomInfo";
 
@@ -27,6 +28,7 @@ const OpenRooms = () => {
 	};
 
 	return (
+		
 		<div className="openRooms__section">
 			<div className="openRooms__header">
 				<img src={openRoomIcon} alt="" />

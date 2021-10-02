@@ -13,7 +13,7 @@ li{
     background-color:rgb(65, 48, 212);
     box-sizing: border-box;
     padding: 200px 20px 0 20px;
-    transition: width .2s ease-in;
+    transition: 150ms;
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -43,6 +43,7 @@ li{
     font-weight: 600;
     position: relative;
     padding: 20px 0 0 0;
+    
 
 }
 
@@ -69,8 +70,8 @@ li{
     font-size: 25px;
     line-height: 40px;
     text-align: center;
+    left: 40px;
     color: #fff;
-    right: 50px;
     padding: 24px 20 20 0;
     position: relative;
 }
@@ -95,6 +96,7 @@ li{
 
 .side-menu .main-menu{
     margin: 5px 0;
+    
 }
 
 .footer{
@@ -141,14 +143,14 @@ li{
     line-height: 40px;
     text-align: center;
     color: #fff;
-    right: 50px;
+    left: 60px;
     padding: 24px 0 0 0;
     position: relative;
 }
 
 .side-menu.inactive .footer .bottom-menu .bottom-icon{
     font-size: 25px;
-    padding: 24px 0 0 0;
+    padding: 24px 0 0 19px;
     color: #fff;
     position: static;
 }
