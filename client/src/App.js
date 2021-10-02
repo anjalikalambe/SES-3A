@@ -1,41 +1,47 @@
+import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Container from "@material-ui/core/Container";
-import { PurpleButton } from "./components/Buttons";
-import { CreamButton } from "./components/Buttons";
-import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Welcome from "./pages/Welcome";
+import Profile from "./pages/Profile";
 
 class App extends Component {
-	state = { users: [] };
+	state = { users: [], data: [] };
 
 	componentDidMount() {
-		fetch("/users")
+		// fetch('/users') //running port3000
+		// 	.then(res => res.json())
+		// 	.then(users => this.setState({users}));
+
+		fetch("/members")
 			.then((res) => res.json())
-			.then((users) => this.setState({ users }));
+			.then((data) => this.setState({ data }, console.log(data)));
 	}
 
 	render() {
 		return (
 			<div className="App">
-				<Header users={this.state.users} />
-				<div className="box">
-					<div className="text1">
-						Welcome to the world test of virtual love
-					</div>
-					<div className="text2">
-						Diverge into the the rooms of love and find the right
-						match for you
-					</div>
-					<Container maxWidth="sm" className="box2">
-						<PurpleButton variant="contained" color="primary">
-							Join a room
-						</PurpleButton>
-						<CreamButton variant="contained" color="primary">
-							Sign up
-						</CreamButton>
-					</Container>
+				<Router>
+					<Header />
+					<Switch>
+						<Route path="/profile">
+							<Profile />
+						</Route>
+						<Route path="/">
+							<Welcome />
+						</Route>
+					</Switch>
+				</Router>
+
+				{/* example api succesful fetch */}
+				<div>
+					{typeof this.state.data.members === "undefined" ? (
+						<p>...loading</p>
+					) : (
+						this.state.data.members.map((member, i) => (
+							<p key={i}>{member}</p>
+						))
+					)}
 				</div>
 			</div>
 		);
