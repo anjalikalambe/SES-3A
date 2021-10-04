@@ -13,14 +13,6 @@ function Reports() {
 
 	return (
 		<>
-		<PurpleContainer width={300}  >
-	<Grid container spacing={3} >
-	<Grid xs={12}>
-					<WhiteSelect options={["Report Users", "Show Reported Users"]}/>
-					
-				</Grid>
-		</Grid>
-		</PurpleContainer>
 		<PurpleContainer width={600} >
 			<Grid container spacing={3}>
 				<Grid item xs={12}>
@@ -45,7 +37,7 @@ function Reports() {
 				</Grid>
 				<Grid item xs={12}>
 					<DarkPurpleButton variant="contained" color="primary" className="report-button">
-						Report
+						Submit
 					</DarkPurpleButton>
 				</Grid>
 			</Grid>
