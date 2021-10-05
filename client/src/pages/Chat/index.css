@@ -25,14 +25,22 @@ margin: 12px 0;
     justify-content: flex-start;
 }
 
-.me-message{
+.me-message,.me-message-emoji{
     color: #fff;
     margin-right: 12px;
 }
 
-.other-message{
+.me-message-emoji{
+    font-size: 24px;
+}
+
+.other-message,.other-message-emoji{
     color: #fff;
     margin-left: 12px;
+}
+
+.other-message-emoji{
+    font-size: 24px;
 }
 
 
@@ -42,11 +50,13 @@ margin: 12px 0;
 }
 
 .chat-img{
+    cursor: pointer;
     width: 80px;
     margin-left: 12px;
 }
 
 .chat-img-me{
+    cursor: pointer;
     width: 80px;
     margin-right: 12px;
 }
@@ -55,13 +65,25 @@ margin: 12px 0;
     display: flex;
 }
 
-.chat-input > #bootstrap-input {
-    border-radius: 4px 0 0 4px;
-}
-
 .add-icon{
     width: 41px;
     height: 41px;
     margin-top: 24px;
+    cursor: pointer;
+}
+
+.big-img-url{
+    width: 780px;
+    height: 560px;
+
+}
+
+.emoji-container{
+    background-color: #fff;
+    padding: 12px;
+}
+
+.emoji-mart-emoji{
+    border: none;
     cursor: pointer;
 }
