@@ -3,6 +3,7 @@ import {CreamButton, PurpleButton} from "../../components/Buttons";
 import React from "react";
 import "./style.css";
 import BgImage from "../../icon.png";
+import GroupAllocation from "../../GroupAllocation";
 
 function Welcome(){
 	return (
@@ -22,6 +23,7 @@ function Welcome(){
 				</CreamButton>
 			</Container>
 			<img src={BgImage} className="bgImage"/>
+			<GroupAllocation/>
 		</div>
 	);
 }
