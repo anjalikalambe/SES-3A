@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
+import Room from "./components/Room/Room";
 
 class App extends Component {
 	state = { users: [], data: [] };

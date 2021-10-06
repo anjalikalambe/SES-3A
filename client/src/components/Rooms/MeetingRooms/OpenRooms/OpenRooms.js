@@ -3,8 +3,12 @@ import openRoomIcon from "../../../../Assets/MeetingRoomAssets/openRoomIcon.png"
 import personIcon from "../../../../Assets/MeetingRoomAssets/personIcon.png";
 import joinIcon from "../../../../Assets/MeetingRoomAssets/joinIcon.png";
 import openDoor from "../../../../Assets/MeetingRoomAssets/openDoor.png";
-import closedDoor from "../../../../Assets/MeetingRoomAssets/closedDoor.png";
+import { useHistory } from "react-router-dom";
+import Link from "@material-ui/core/Link";
+import { Link as RouterLink } from "react-router-dom";
 
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import closedDoor from "../../../../Assets/MeetingRoomAssets/closedDoor.png";
 
 import "./OpenRooms.css";
 import RoomInfo from "./RoomInfo/RoomInfo";
@@ -15,6 +19,7 @@ const OpenRooms = () => {
 	const [showRoom, setShowRoom] = useState(false);
 	const [profile, setProfile] = useState([]);
 
+	const history = useHistory();
 	useEffect(() => {
 		fetch("/rooms")
 			.then((res) => res.json())
@@ -28,7 +33,6 @@ const OpenRooms = () => {
 	};
 
 	return (
-		
 		<div className="openRooms__section">
 			<div className="openRooms__header">
 				<img src={openRoomIcon} alt="" />

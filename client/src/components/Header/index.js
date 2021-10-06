@@ -6,6 +6,7 @@ import { DarkButton } from "../Buttons";
 import { Link as RouterLink } from "react-router-dom";
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Room from "../Room/Room";
 
 function Header(users) {
 	return (
@@ -18,7 +19,11 @@ function Header(users) {
 				<Link href="/rooms" className="navigation">
 					ROOMS
 				</Link>
-				<Link className="navigation" component={RouterLink} to="/features">
+				<Link
+					className="navigation"
+					component={RouterLink}
+					to="/features"
+				>
 					FEATURES
 				</Link>
 				<Link
@@ -27,6 +32,9 @@ function Header(users) {
 					to="/profile"
 				>
 					PROFILE
+				</Link>
+				<Link href="/room" className="navigation">
+					ROOM
 				</Link>
 			</Container>
 			<DarkButton

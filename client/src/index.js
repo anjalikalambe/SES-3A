@@ -5,12 +5,14 @@ import reportWebVitals from "./reportWebVitals";
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
+import Room from "./components/Room/Room";
 
 ReactDOM.render(
 	<BrowserRouter>
 		<Switch>
 			<Route path="/" exact component={App} />
 			<Route path="/rooms" component={MeetingRooms} />
+			<Route path="/room" component={Room} />
 		</Switch>
 	</BrowserRouter>,
 
