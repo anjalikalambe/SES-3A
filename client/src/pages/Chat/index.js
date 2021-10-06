@@ -122,6 +122,7 @@ function Chat() {
 			}]);
 			// Emit message to socket.
 			emitMessage();
+			setInputValue('');
 			autoScroll();
 		}
 	}
