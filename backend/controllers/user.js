@@ -1,5 +1,6 @@
 const User = require("../models/User");
-
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
 
 module.exports = {//function to verify token from client to then protect frontend routes. 
     register: function (req, res) {
@@ -63,10 +64,33 @@ module.exports = {//function to verify token from client to then protect fronten
                     });
                 }
                 else {
-                    res.json({
-                        success: true,
-                        message: "Logged in"
-                    });
+                    bcrypt.compare(password, user.password)
+                        .then(isMatch => {
+                            if (isMatch) {
+                                const payload = {
+                                    id: user.id,
+                                    username: user.username
+                                }
+                                jwt.sign(
+                                    payload,
+                                    process.env.USERSECRET,
+                                    { expiresIn: 604800 },
+                                    (err, token) => {
+                                        res.json({
+                                            success: true,
+                                            username: user.username,
+                                            token: "Bearer " + token,
+                                            message: "Successful login!"
+                                        });
+                                    }
+                                );
+                            } else {
+                                res.json({
+                                    success: false,
+                                    message: "incorrect password"
+                                });
+                            }
+                        });
                 }
             })
             .catch(e => {

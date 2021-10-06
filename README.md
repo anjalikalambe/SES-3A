@@ -81,6 +81,24 @@ Go into the 'flask-server' directory and type the following command in CMD or Te
 <hr style="width:50%">
 <br>
 
+## Jupyter Setup / Run
+
+| STEP 1 |Locate Python Path - Part (1/2)            |
+|:-------|:------------------------------------------|  
+
+Launch cmd / terminal and type <b>'where.exe python'</b>. Once found cd into this directory and type the following <b>pip install notebook</b>
+
+<hr>
+<br>
+    
+| STEP 2 |cd into the ML directory & run - Part (2/2)|
+|:-------|:------------------------------------------|  
+
+To Run Jupyter notebook, type the following command <b>'python -m notebook'</b>. This will launch a local host, make your way to the <b>'user_match_model.ipynb'</b> file and proceed to run the python file
+    
+<hr style="width:50%">
+<br>
+
 ## Running The Application
 <b>NOTE: Make sure you are in the '/client' directory to run the application</b>
 
