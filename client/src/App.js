@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
-import ChatTester from './components/ChatTester';
+import Chat from './pages/Chat';
 
 class App extends Component {
 	state = {
@@ -27,12 +27,15 @@ class App extends Component {
 						<Route path="/profile">
 							<Profile/>
 						</Route>
+						<Route path="/chat" exact>
+							<Chat/>
+						</Route>
 						<Route path="/">
 							<Welcome/>
 						</Route>
+
 					</Switch>
 				</Router>
-				<ChatTester />
 			</div>
 		);
 	}
