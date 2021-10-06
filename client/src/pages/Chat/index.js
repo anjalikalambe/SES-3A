@@ -69,12 +69,12 @@ function Chat() {
 
 	// Hook to listen for incoming messages to update chatList.
 	useEffect(() => {
-		socket.on('private_response', (msg) => {
+		socket.on('private_response', (data) => {
 			setChatList(prevList => [...prevList, {
 					id: chatList.length + 1,
 					type: 1, // incoming messages always from other user
-					message: msg,
-					messageType: 'text' // Update backend to accept more than just text
+					message: data.message,
+					messageType: data.messageType // Update backend to accept more than just text
 			}]);
 			// // For using ChatTester
 			// setMessages([...messages, msg]);
@@ -104,10 +104,11 @@ function Chat() {
 		}, 200)
 	}
 
-	const emitMessage = () => {
+	const emitMessage = (msg, msgType) => {
 		socket.emit('private_message', {
-			'message': inputValue,
-			'target': chatRoom
+			'message': msg,
+			'target': chatRoom,
+			'type': msgType
 		});
 	}
 
@@ -116,12 +117,12 @@ function Chat() {
 			setChatList(prevList => [...prevList, {
 				id: chatList.length + 1,
 				// type: getRandom(),
-				type: 0,
+				type: USER_TYPE.me,
 				message: inputValue,
 				messageType: 'text'
 			}]);
 			// Emit message to socket.
-			emitMessage();
+			emitMessage(inputValue, 'text');
 			setInputValue('');
 			autoScroll();
 		}
@@ -151,7 +152,7 @@ function Chat() {
 				return
 			}
 			const imgUrl = await transformFileToBase64(file)
-			setChatList([...chatList, {
+			setChatList(prevList => [...prevList, {
 				id: chatList.length + 1,
 				type: USER_TYPE.me,
 				message: imgUrl,
@@ -172,13 +173,16 @@ function Chat() {
 	}
 
 	const choiceEmoji = (emoji, event) => {
-		setChatList([...chatList, {
+		setChatList(prevList => [...prevList, {
 			id: chatList.length + 1,
-			type: getRandom(),
+			// type: getRandom(),
+			type: USER_TYPE.me,
 			message: emoji.native,
 			messageType: 'emoji'
 		}])
+		emitMessage(emoji.native, 'emoji')
 		autoScroll()
+
 	}
 
 
