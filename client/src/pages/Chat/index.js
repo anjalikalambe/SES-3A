@@ -3,7 +3,7 @@ import PurpleContainer from "../../components/PurpleContainer";
 import WhiteInput from "../../components/WhiteInput";
 import Avatar from '@material-ui/core/Avatar'
 import Grid from "@material-ui/core/Grid";
-import React, {useRef, useState, useEffect} from "react";
+import React, {useRef, useState, useEffect, useCallback} from "react";
 import me from '../../assets/imgs/chat-picture1.jpg'
 import other from '../../assets/imgs/chat-picture2.jpg'
 import addIcon from '../../assets/imgs/002.jpg'
@@ -64,24 +64,28 @@ function Chat() {
 	const [bigImgUrl, setBigImgUrl] = useState('')
 	const [showEmoji, setShowEmoji] = useState(false)
 
-	const [messages, setMessages] = useState(['start'])
+	// // For using ChatTester component
+	// const [messages, setMessages] = useState(['start'])
 
 	// Hook to listen for incoming messages to update chatList.
 	useEffect(() => {
-		socket.once('private_response', (msg) => {
-			setChatList([...chatList, {
+		socket.on('private_response', (msg) => {
+			setChatList(prevList => [...prevList, {
 					id: chatList.length + 1,
 					type: 1, // incoming messages always from other user
 					message: msg,
 					messageType: 'text' // Update backend to accept more than just text
 			}]);
-
 			// // For using ChatTester
 			// setMessages([...messages, msg]);
-
+			autoScroll();
 		});
-		autoScroll();
-	});
+
+		return () => {
+			socket.off('private_response');
+		}
+
+	}, []);
 
 	const getRandom = () => {
 		const l = Math.floor(Math.random() * ary.length)
@@ -109,7 +113,7 @@ function Chat() {
 
 	const onKeyPress = (e) => {
 		if (e.code === 'Enter' && inputValue != '') {
-			setChatList([...chatList, {
+			setChatList(prevList => [...prevList, {
 				id: chatList.length + 1,
 				// type: getRandom(),
 				type: 0,
