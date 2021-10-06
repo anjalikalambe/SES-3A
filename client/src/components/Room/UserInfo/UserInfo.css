@@ -5,7 +5,7 @@
 	right: 0;
 	background-color: rgb(65, 48, 212);
 	box-sizing: border-box;
-	padding: 200px 20px 0 20px;
+	padding: 0px 20px 0 20px;
 	transition: 150ms;
 	border-radius: 0px 20px 20px 0px;
 	margin-right: 20px;
@@ -74,11 +74,23 @@
 	align-items: center;
 }
 
-.like-status:hover {
+.connected-user-like-profile:hover {
 	cursor: pointer;
 }
 
 .like-status {
 	width: 30px;
 	height: 30px;
+}
+
+.connected-user-like-profile {
+	display: flex;
+	flex-direction: column;
+	font-size: 10px;
+	align-items: center;
+}
+
+.user-info-section-bottom {
+	color: white;
+	font-size: 15px;
 }

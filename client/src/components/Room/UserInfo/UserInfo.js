@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./UserInfo.css";
 import redHeart from "../../../Assets/UserProfile/redHeart.png";
 import whiteHeart from "../../../Assets/UserProfile/whiteHeart.png";
+import location from "../../../Assets/UserProfile/location.png";
 
 const UserInfo = () => {
 	const [likeStatus, setLikeStatus] = useState(false);
@@ -27,13 +28,16 @@ const UserInfo = () => {
 							alt=""
 						/>
 						<div className="connected-user-like">
-							<div className="connected-user-like-profile">
+							<div
+								className="connected-user-like-profile"
+								onClick={handleLikeFunction}
+							>
 								<img
 									className="like-status"
 									src={likeStatus ? redHeart : whiteHeart}
 									alt=""
-									onClick={handleLikeFunction}
 								/>
+								<span>{likeStatus ? "Unlike" : "Like"}</span>
 							</div>
 							<h5>James</h5>
 						</div>
@@ -41,7 +45,17 @@ const UserInfo = () => {
 				</div>
 			</div>
 			<div className="user-info-section-bottom">
-				<h1>user info</h1>
+				<h3>
+					<img src={location} />
+					Sydney, Australia
+				</h3>
+				<h3>28</h3>
+				<h3>Hiking</h3>
+				<h3>Female</h3>
+				<h3>
+					My name is James, I enjoy going on hikes and meeting new
+					people. Looking for a relationship.
+				</h3>
 			</div>
 		</div>
 	);
