@@ -6,14 +6,18 @@ import WhiteInput from "../../../components/WhiteInput";
 import WhiteSelect from "../../../components/WhiteSelect";
 import Grid from "@material-ui/core/Grid";
 import {DarkPurpleButton} from "../../../components/Buttons";
+import Tables from "../../../components/Table";
 
 function Reports() {
-
-	const [inactive, setInactive] = useState(true);
 
 	return (
 		<>
 		<PurpleContainer width={600} >
+		<Grid item xs={12}>
+					<WhiteSelect options={["Report Users", "Show Reported Users"]} 	/>			
+				</Grid>
+		</PurpleContainer>
+		<PurpleContainer width={600} className='test'>
 			<Grid container spacing={3}>
 				<Grid item xs={12}>
 					<h2 className="title">
@@ -42,6 +46,9 @@ function Reports() {
 				</Grid>
 			</Grid>
 		</PurpleContainer>
+		<PurpleContainer width={1000}>
+		<Tables></Tables>
+		</PurpleContainer >
 		</>
 	)
 }
