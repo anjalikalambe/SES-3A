@@ -1,0 +1,132 @@
+.openRooms__section {
+	display: flex;
+	flex-direction: column;
+	padding-right: 40px;
+	border-right: 1px solid white;
+	flex: 0.7;
+}
+
+.openRooms__roomList {
+	max-height: 424px;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+.openRooms__header {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+}
+
+.openRooms__header img {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+.room__info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #4289f3;
+	margin-bottom: 20px;
+	padding: 5px 30px 5px 30px;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.room__info:hover {
+	cursor: pointer;
+	transform: translateY(3px);
+}
+
+.participant__img {
+	width: 20px;
+	border-radius: 30px;
+}
+
+.personIcon {
+	width: 16px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.joinRoom__button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #c83200;
+	height: 32px;
+	padding: 4px;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: 1ms ease-in;
+}
+
+.openRoomStatus {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.openRoomStatus .participant__img {
+	width: 20px;
+	height: 20px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.participantAmount {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.joinRoom__button img {
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+}
+
+.roomName__box {
+	width: 25%;
+	text-align: left;
+	font-weight: 600;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+	padding-left: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: white;
+	border-radius: 10px;
+}
+
+.roomStatus {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: left;
+}
+
+.roomStatus img {
+	width: 30px;
+	height: 30px;
+}

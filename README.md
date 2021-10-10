@@ -78,6 +78,8 @@ MAC: https://www.python.org/downloads/release/python-397/ download and install t
 
 Go into the 'flask-server' directory and type the following command in CMD or Terminal 'pip3 install Flask'
 
+To Run Jupyter notebook, type the following command <b>'python -m notebook'</b>. This will launch a local host, make your way to the <b>'user_match_model.ipynb'</b> file and proceed to run the python file
+    
 <hr style="width:50%">
 <br>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { createTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { pink, purple, blue } from '@material-ui/core/colors';
+import { pink, purple, blue, red } from '@material-ui/core/colors';
 
 export const DarkButton = withStyles((theme) => ({
 	root: {
@@ -47,6 +47,17 @@ export const DarkPurpleButton = withStyles((theme) => ({
 		backgroundColor: '#43428C',
 		'&:hover': {
 			backgroundColor: blue[2000],
+		},
+		borderRadius: '25px',
+		padding: '5px 40px'
+	},
+}))(Button);
+
+export const RedButton = withStyles((theme) => ({
+	root: {
+		backgroundColor: '#FF0000',
+		'&:hover': {
+			backgroundColor: red[500],
 		},
 		borderRadius: '25px',
 		padding: '5px 40px'
