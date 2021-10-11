@@ -1,13 +1,30 @@
+from operator import ne
 from flask import Flask, jsonify
+from csv import DictReader
+import pandas as pd
 
 app = Flask(__name__)
+
+clusterArr = []
+
+def cluster(arr):
+	data = pd.read_csv('../ML/clustered_profiles222.csv')
+
+	# read row line by line
+	for d in data.values:
+		# read column by index
+		arr.append(d[9])
+		print(d[9])
+	return arr
 
 
 # Members API Route
 
 @app.route("/members")
 def members():
-    return {"members": ["Member 1", "Member 2", "Member 2"]}
+    # return {"members": ["Member 1", "Member 2", "Member 2"]}
+	return {"members": [cluster(clusterArr)]}
+
 
 @app.route("/rooms")
 def rooms():

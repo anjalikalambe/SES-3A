@@ -39,8 +39,11 @@ class App extends Component {
 						<p>...loading</p>
 					) : (
 						this.state.data.members.map((member, i) => (
-							<p key={i}>{member}</p>
+							<ul>
+								<li key={i}>{member + ""}</li>
+							</ul>
 						))
+						// this.state.data.members
 					)}
 				</div>
 			</div>
