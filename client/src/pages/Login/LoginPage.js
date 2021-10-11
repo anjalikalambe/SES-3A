@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './LoginPage.css';
-import Header from "./components/Header";
+import Header from "../../components/Header";
 
 class LoginPage extends Component {
     state = {users: []};

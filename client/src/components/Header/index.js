@@ -33,6 +33,7 @@ function Header(users) {
 				variant="contained"
 				color="primary"
 				className="login-button"
+				href="/login"
 			>
 				Log In
 			</DarkButton>
