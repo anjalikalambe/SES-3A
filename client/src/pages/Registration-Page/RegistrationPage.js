@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './RegistrationPage.css';
-import Header from "./components/Header";
 
 class RegistrationPage extends Component {
     state = {users: []};
@@ -14,7 +13,6 @@ class RegistrationPage extends Component {
     render() {
       return (
        <div class="RegistrationPage">
-           <Header />
 
            <div class="signup-container">
             <div class="signup-box">

@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
+import LoginPage from "./pages/Login-Page/LoginPage";
+import Features from "./pages/Features";
 
 class App extends Component {
 	state = { users: [], data: [] };
@@ -26,6 +28,12 @@ class App extends Component {
 					<Switch>
 						<Route path="/profile">
 							<Profile />
+						</Route>
+						<Route path="/login-page">
+							<LoginPage />
+						</Route>
+						<Route path="/features">
+							<Features />
 						</Route>
 						<Route path="/">
 							<Welcome />
