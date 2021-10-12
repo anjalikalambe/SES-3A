@@ -1,41 +1,64 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Header from "./components/Header";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
-import Features from "./pages/Features";
+import RegistrationPage from "./RegistrationPage";
 import Reports from "./pages/Features/Reports";
+import Features from "./pages/Features";
 
 class App extends Component {
-	state = {users: []};
+
+	state = { users: [], data: [] };
 
 	componentDidMount() {
-		fetch('/users')
+		// fetch('/users') //running port3000
+		// 	.then(res => res.json())
+		// 	.then(users => this.setState({users}));
+
+		fetch('/members')
 			.then(res => res.json())
-			.then(users => this.setState({users}));
+			.then(data => this.setState({ data }, console.log(data)));
 	}
 
 	render() {
 		return (
-			<div className="App">					
+			<div className="App">
 				<Router>
-					<Header/>
+					<Header />
 					<Switch>
 						<Route path="/profile">
-							<Profile/>
+							<Profile />
 						</Route>
-						<Route path="/features">
-							<Features/>
+						<Route path="/" exact={true}>
+							<Welcome />
 						</Route>
-						<Route path="/reports">
-							<Reports/>
+
+						<Route path="/register" exact={true}>
+							<RegistrationPage />
 						</Route>
-						<Route path="/">
-							<Welcome/>
+
+						<Route path="/features" exact={true}>
+							<Features />
+						</Route>
+
+						<Route path="/reports" exact={true}>
+							<Reports />
 						</Route>
 					</Switch>
 				</Router>
+
+				{/* example api succesful fetch */}
+				<div>
+					{(typeof this.state.data.members === 'undefined') ? (
+						<p>...loading</p>
+					) : (
+						this.state.data.members.map((member, i) => (
+							<p key={i}>{member}</p>
+						))
+					)}
+				</div>
 			</div>
 		);
 	}

@@ -1,6 +1,5 @@
 import "././report.css"
-import React from "react";
-import { useState } from 'react';
+import React, {useState} from "react";
 import PurpleContainer from "../../../components/PurpleContainer";
 import WhiteInput from "../../../components/WhiteInput";
 import WhiteSelect from "../../../components/WhiteSelect";
@@ -9,47 +8,73 @@ import {DarkPurpleButton} from "../../../components/Buttons";
 import Tables from "../../../components/Table";
 
 function Reports() {
+	const [list, setList] = useState([{userId: 1, userName: 'test', gender: 'man'}])
+
+	const [userInfo, setUserInfo] = useState({
+		userId: '',
+		userName: '',
+		gender: ''
+	})
+
+	const onChange = (e, key) => {
+		setUserInfo(v => ({...v, [key]: e.target.value}))
+	}
+
+	const onSubmit =()=>{
+		console.log('user',userInfo)
+		setList([...list,userInfo])
+	}
 
 	return (
 		<>
-		<PurpleContainer width={600} >
-		<Grid item xs={12}>
-					<WhiteSelect options={["Report Users", "Show Reported Users"]} 	/>			
-				</Grid>
-		</PurpleContainer>
-		<PurpleContainer width={600} className='test'>
-			<Grid container spacing={3}>
+			<PurpleContainer width={600}>
 				<Grid item xs={12}>
-					<h2 className="title">
-						Report User
-					</h2>
+					<WhiteSelect onChange={(e)=>{
+						if(e.target.value==='Show Reported Users'){
+							window.scroll({top:document.body.clientHeight,behavior:'smooth'})
+						}
+					}} options={["Report Users", "Show Reported Users"]}/>
 				</Grid>
-				<Grid item xs={12}>
-					<WhiteInput label="User's Full Name"/>
+			</PurpleContainer>
+			<PurpleContainer width={600} className='test'>
+				<Grid container spacing={3}>
+					<Grid item xs={12}>
+						<h2 className="title">
+							Report User
+						</h2>
+					</Grid>
+					<Grid item xs={12}>
+						<WhiteInput onChange={e => onChange(e, 'userName')} label="User's Full Name"/>
+					</Grid>
+					<Grid item xs={6}>
+						<WhiteInput onChange={e => onChange(e, 'userId')} label="User's ID"/>
+					</Grid>
+					<Grid item xs={6}>
+						<WhiteSelect onChange={e => onChange(e, 'gender')} label="Gender"
+									 options={["Male", "Female", "Unidentified"]}/>
+					</Grid>
+					<Grid item xs={12}>
+						<WhiteSelect label="Reason"
+									 options={["Inappropriate Messages", "Inappropriate Photos", "Scam/Phishing/Bot", "Others"]}/>
+					</Grid>
+					<Grid item xs={12}>
+						<WhiteInput label="Description of Report" multiline rows={4}/>
+					</Grid>
+					<Grid item xs={12}>
+						<div onClick={onSubmit} className="report-button">
+							Submit
+						</div>
+					</Grid>
 				</Grid>
-				<Grid item xs={6}>
-					<WhiteInput label="User's ID"/>
-				</Grid>
-				<Grid item xs={6}>
-					<WhiteSelect label="Gender" options={["Male", "Female", "Unidentified"]}/>
-				</Grid>
-				<Grid item xs={12}>
-					<WhiteSelect label="Reason" options={["Inappropriate Messages", "Inappropriate Photos", "Scam/Phishing/Bot", "Others"]}/>
-				</Grid>
-				<Grid item xs={12}>
-					<WhiteInput label="Description of Report" multiline rows={4}/>
-				</Grid>
-				<Grid item xs={12}>
-					<DarkPurpleButton variant="contained" color="primary" className="report-button">
-						Submit
-					</DarkPurpleButton>
-				</Grid>
-			</Grid>
-		</PurpleContainer>
-		<PurpleContainer width={1000}>
-		<Tables></Tables>
-		</PurpleContainer >
+			</PurpleContainer>
+			<PurpleContainer width={1000}>
+				<div className='report-title'>
+				 Show Reported Users
+				</div>
+				<Tables list={list}/>
+			</PurpleContainer>
 		</>
 	)
 }
+
 export default Reports;
