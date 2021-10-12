@@ -28,6 +28,9 @@ function Header(users) {
 				>
 					PROFILE
 				</Link>
+				<Link href="/ML" className="navigation">
+					ML
+				</Link>
 			</Container>
 			<DarkButton
 				variant="contained"

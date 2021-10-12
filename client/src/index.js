@@ -5,12 +5,14 @@ import reportWebVitals from "./reportWebVitals";
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
+import MachineLearningDashboard from "./components/MachineLearning/MachineLearningDashboard"
 
 ReactDOM.render(
 	<BrowserRouter>
 		<Switch>
 			<Route path="/" exact component={App} />
 			<Route path="/rooms" component={MeetingRooms} />
+			<Route path="/ML" component={MachineLearningDashboard} />
 		</Switch>
 	</BrowserRouter>,
 
