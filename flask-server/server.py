@@ -14,7 +14,6 @@ def cluster(arr):
 	for d in data.values:
 		# read column by index
 		arr.append(d[9])
-		print(d[9])
 	return arr
 
 
