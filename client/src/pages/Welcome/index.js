@@ -14,10 +14,10 @@ function Welcome(){
 				Diverge into the the rooms of love and find the right match for you
 			</div>
 			<Container maxWidth="sm" className="box2">
-				<PurpleButton variant="contained" color="primary" >
+				<PurpleButton variant="contained" color="primary" href="/rooms">
 					Join a room
 				</PurpleButton>
-				<CreamButton variant="contained" color="primary" >
+				<CreamButton variant="contained" color="primary" href="/register" >
 					Sign up
 				</CreamButton>
 			</Container>

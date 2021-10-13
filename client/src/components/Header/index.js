@@ -33,7 +33,7 @@ function Header(users) {
 				variant="contained"
 				color="primary"
 				className="login-button"
-				component={RouterLink} to="/login-page"
+				href="/login"
 			>
 				Log In
 			</DarkButton>

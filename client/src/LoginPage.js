@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './LoginPage.css';
+import Header from "./components/Header"
+
 
 class LoginPage extends Component {
     state = {users: []};
@@ -13,7 +15,7 @@ class LoginPage extends Component {
     render() {
       return (
        <div class="LoginPage">
-
+         <Header/>
            <div class="login-container">
             <div class="login-box">
                 <form id="login">
