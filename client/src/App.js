@@ -12,17 +12,6 @@ class App extends Component {
 	state = { users: [], data: [] };
 
 	componentDidMount() {
-<<<<<<< .merge_file_a42096
-=======
-		// fetch('/users') //running port3000
-		// 	.then(res => res.json())
-		// 	.then(users => this.setState({users}));
-
-
-		fetch("/members")
-			.then((res) => res.json())
-			.then((data) => this.setState({ data }, console.log(data)));
->>>>>>> .merge_file_a28572
 	}
 
 	render() {
@@ -42,18 +31,6 @@ class App extends Component {
 						</Route>
 					</Switch>
 				</Router>
-<<<<<<< .merge_file_a42096
-=======
-
-				{/* example api succesful fetch */}
-				<div>
-					{typeof this.state.data.members === 'undefined' ? (
-						<p>...loading</p>
-					) : (
-						this.state.data.members.map((member, i) => <p key={i}>{member}</p>)
-					)}
-				</div>
->>>>>>> .merge_file_a28572
 			</div>
 		);
 	}
