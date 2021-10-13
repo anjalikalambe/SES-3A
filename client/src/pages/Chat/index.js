@@ -14,7 +14,6 @@ import iconSmile from '../../assets/imgs/001.jpg'
 import {Picker} from 'emoji-mart'
 import 'emoji-mart/css/emoji-mart.css'
 import io from 'socket.io-client';
-import ChatTester from "../../components/ChatTester";
 
 const USER_TYPE = {
 	me: 0,
@@ -30,9 +29,10 @@ const DialogContent = withStyles((theme) => ({
 }))(MuiDialogContent);
 
 // Socket to server
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect('ws://localhost:5000');
 // Join room - Replace with user authentication and user ID.
-const chatRoom = 'testroom'; // Setup room based on user id and authentication
+// Room is unique to two users.
+const chatRoom = 'testroom';
 socket.emit('join', {'room': chatRoom});
 
 function Chat() {
@@ -64,20 +64,15 @@ function Chat() {
 	const [bigImgUrl, setBigImgUrl] = useState('')
 	const [showEmoji, setShowEmoji] = useState(false)
 
-	// // For using ChatTester component
-	// const [messages, setMessages] = useState(['start'])
-
 	// Hook to listen for incoming messages to update chatList.
 	useEffect(() => {
 		socket.on('private_response', (data) => {
 			setChatList(prevList => [...prevList, {
 					id: chatList.length + 1,
-					type: 1, // incoming messages always from other user
+					type: USER_TYPE.other, // incoming messages always from other user
 					message: data.message,
-					messageType: data.messageType // Update backend to accept more than just text
+					messageType: data.messageType
 			}]);
-			// // For using ChatTester
-			// setMessages([...messages, msg]);
 			autoScroll();
 		});
 
@@ -108,20 +103,20 @@ function Chat() {
 		socket.emit('private_message', {
 			'message': msg,
 			'target': chatRoom,
+			// 'sender': 'senderID', // Provide sender's ID for db to store.
 			'type': msgType
 		});
 	}
 
 	const onKeyPress = (e) => {
-		if (e.code === 'Enter' && inputValue != '') {
+		if (e.code === 'Enter' && inputValue !== '') {
 			setChatList(prevList => [...prevList, {
 				id: chatList.length + 1,
-				// type: getRandom(),
 				type: USER_TYPE.me,
 				message: inputValue,
 				messageType: 'text'
 			}]);
-			// Emit message to socket.
+			// Emit message to socket and clear input box.
 			emitMessage(inputValue, 'text');
 			setInputValue('');
 			autoScroll();
@@ -158,6 +153,7 @@ function Chat() {
 				message: imgUrl,
 				messageType: 'picture'
 			}])
+			emitMessage(imgUrl, 'picture');
 			autoScroll()
 		}
 	}
@@ -175,7 +171,6 @@ function Chat() {
 	const choiceEmoji = (emoji, event) => {
 		setChatList(prevList => [...prevList, {
 			id: chatList.length + 1,
-			// type: getRandom(),
 			type: USER_TYPE.me,
 			message: emoji.native,
 			messageType: 'emoji'
@@ -248,16 +243,6 @@ function Chat() {
 			<Dialog maxWidth={800} onClose={handleClose} open={open}>
 				<img src={bigImgUrl} className='big-img-url'/>
 			</Dialog>
-
-			{/* for using chat tester
-			{messages.map(msg => (
-				<div>
-					<p>{msg}</p>
-				</div>
-			))}
-
-			<ChatTester /> */}
-
 		</>
 	)
 }

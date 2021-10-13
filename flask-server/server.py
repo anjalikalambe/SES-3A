@@ -19,11 +19,11 @@ def members():
 # Private chat message handler
 @socketio.on("private_message")
 def handle_private_message(data):
-    # print("Message: {}".format(data["message"]))
     emit_data = {
         "message": data["message"],
         "messageType": data["type"]
     }
+    # TODO: Save message to database based on room id (data["target"]) and sender (data["sender"]).
     emit("private_response", emit_data, to=data["target"], include_self=False)
 
 # Chat room handler for one-on-one conversations
