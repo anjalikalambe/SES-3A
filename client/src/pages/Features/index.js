@@ -1,4 +1,4 @@
-import "./style.css"
+import "./features.css"
 import React from "react";
 import { Card, Link } from "@material-ui/core";
 import {RedButton} from "../../components/Buttons";
@@ -12,9 +12,9 @@ function Features() {
                     Test
 					</Card>
 					<Card className='card'>
-					<p>Header</p>
-					<p>Image</p>
-					<p>Description</p>
+					Header
+					Image
+					Description
 					<RedButton className='button' component={RouterLink} to="/reports">
 						Report
 					</RedButton>

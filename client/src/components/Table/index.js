@@ -47,11 +47,11 @@ function MTables({list}) {
 					{
 						list.map(v => <TableRow>
 							<TableCell className={classes.tableBodyCell}>
-                                {v.userId}
+                                {v.userName}
 							</TableCell>
 
                             <TableCell className={classes.tableBodyCell}>
-                                {v.userName}
+                                {v.userId}
                             </TableCell>
 
                             <TableCell className={classes.tableBodyCell} >
