@@ -11,6 +11,9 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const roomsRouter = require("./routes/rooms");
 
+//stop cors error
+var cors = require('cors')
+
 const liveReloadServer = livereload.createServer();
 liveReloadServer.watch(path.join(__dirname, "public"));
 
@@ -22,6 +25,7 @@ liveReloadServer.server.once("connection", () => {
 
 const app = express();
 app.use(connectLivereload());
+app.use(cors())
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

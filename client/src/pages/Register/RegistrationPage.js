@@ -8,15 +8,14 @@ class RegistrationPage extends Component {
     super(props);
 
     this.state = {
-      user: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        age: null,
-        location: '',
-        password: '',
-        confirmPassword: ''
-      }
+      firstName: '',
+      lastName: '',
+      email: '',
+      age: 0,
+      location: '',
+      password: '',
+      confirmPassword: '',
+      gender: ''
     }
   }
 
@@ -25,21 +24,24 @@ class RegistrationPage extends Component {
   }
 
   handleRegistration = async (e) => {
-    console.log(this.state.user);
+    console.log(this.state);
+    e.preventDefault();
 
-    if (this.state.user.confirmPassword === this.state.user.password) {
+    if (this.state.confirmPassword === this.state.password) {
       try {
         let response = await axios.post("http://localhost:5000/user/register", {
-          firstName: this.state.user.firstName,
-          lastName: this.state.user.lastName,
-          age: this.state.user.age,
-          location: this.state.user.location,
-          email: this.state.user.email,
-          password: this.state.user.password,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          age: parseInt(this.state.age),
+          gender: this.state.gender,
+          location: this.state.location,
+          email: this.state.email,
+          password: this.state.password
         });
         console.log(response.data.message);
       } catch (e) {
         console.log(e);
+        console.log(e.response.data.message);
       }
     } else {
       console.log("Passwords don't match");
@@ -72,32 +74,33 @@ class RegistrationPage extends Component {
               </div>
               <div class="form-group">
                 <input type="text" id="firstName" name="firstname" placeholder="First Name" required onChange={(e) =>
-                  this.setState({ firstName: e.target.value })}>
+                  this.setState({ ...this.state, firstName: e.target.value })}>
                 </input>
 
                 <input type="text" id="lastName" name="lastname" placeholder="Last Name" required onChange={(e) =>
-                  this.setState({ lastName: e.target.value })}>
+                  this.setState({ ...this.state, lastName: e.target.value })}>
                 </input>
               </div>
               <div class="form-group">
                 <input type="text" id="email" name="email" placeholder="Your email adress" required onChange={(e) =>
-                  this.setState({ email: e.target.value })}>
+                  this.setState({ ...this.state, email: e.target.value })}>
                 </input>
               </div>
               <div class="form-group">
                 <div class="column-group">
                   <label for="age">Age</label>
                   <input type="number" id="age" name="age" min="18" max="100" onChange={(e) =>
-                  this.setState({ age: e.target.value })}>
+                    this.setState({ ...this.state, age: e.target.value })}>
                   </input>
                 </div>
 
                 <div class="column-group">
                   <label for="gender">Gender</label>
-                  <select name="gender" id="gender" onChange={(e) =>
-                  this.setState({ gender: e.target.value })}>
+                  <select name="gender" id="gender" placeholder="select" onChange={(e) =>
+                    this.setState({ ...this.state, gender: e.target.value })}>
+                    <option>--Select--</option>
                     <option value="male">Male</option>
-                    <option value="male">Female</option>
+                    <option value="female">Female</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>
@@ -106,22 +109,22 @@ class RegistrationPage extends Component {
                 <div class="column-group">
                   <label for="country">Country of residence</label>
                   <input type="text" id="location" name="country" placeholder="Your country of residence" onChange={(e) =>
-                  this.setState({ location: e.target.value })}>
+                    this.setState({ ...this.state, location: e.target.value })}>
                   </input>
                 </div>
               </div>
               <div class="form-group">
                 <input type="password" id="password" name="password" placeholder="Enter password" required onChange={(e) =>
-                  this.setState({ password: e.target.value })}>
+                  this.setState({ ...this.state, password: e.target.value })}>
                 </input>
 
 
                 <input type="password" id="confirmPassword" name="confirmpassword" placeholder="Confirm password" required onChange={(e) =>
-                  this.setState({ confirmPassword: e.target.value })}>
+                  this.setState({ ...this.state, confirmPassword: e.target.value })}>
                 </input>
               </div>
               <div class="form-group">
-                <button type="submit" form="signup" value="Submit" onClick={this.handleRegistration}>Create account</button>
+                <button form="signup" value="Submit" onClick={this.handleRegistration}>Create account</button>
               </div>
               <div class="form-group">
                 <p>Have an account?<a href="/"> Log in here</a></p>

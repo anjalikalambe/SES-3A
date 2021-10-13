@@ -33,7 +33,7 @@ module.exports = {//function to verify token from client to then protect fronten
                         password,
 
                     });
-
+                    
                     //save user to collection
                     newUser.save()
                         .then((user) => {
