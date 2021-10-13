@@ -1,9 +1,12 @@
-import React, { Component } from "react";
-import "./App.css";
-import Header from "./components/Header";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Welcome from "./pages/Welcome";
-import Profile from "./pages/Profile";
+
+import React, { Component } from 'react';
+import './App.css';
+import Header from './components/Header';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Welcome from './pages/Welcome';
+import Profile from './pages/Profile';
+import Rooms from './pages/Rooms';
+
 
 class App extends Component {
 	state = { users: [], data: [] };
@@ -13,6 +16,7 @@ class App extends Component {
 		// 	.then(res => res.json())
 		// 	.then(users => this.setState({users}));
 
+
 		fetch("/members")
 			.then((res) => res.json())
 			.then((data) => this.setState({ data }, console.log(data)));
@@ -20,14 +24,17 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<div className='App'>
 				<Router>
 					<Header />
 					<Switch>
-						<Route path="/profile">
+						<Route path='/room'>
+							<Rooms />
+						</Route>
+						<Route path='/profile'>
 							<Profile />
 						</Route>
-						<Route path="/">
+						<Route path='/'>
 							<Welcome />
 						</Route>
 					</Switch>
@@ -35,12 +42,10 @@ class App extends Component {
 
 				{/* example api succesful fetch */}
 				<div>
-					{typeof this.state.data.members === "undefined" ? (
+					{typeof this.state.data.members === 'undefined' ? (
 						<p>...loading</p>
 					) : (
-						this.state.data.members.map((member, i) => (
-							<p key={i}>{member}</p>
-						))
+						this.state.data.members.map((member, i) => <p key={i}>{member}</p>)
 					)}
 				</div>
 			</div>
