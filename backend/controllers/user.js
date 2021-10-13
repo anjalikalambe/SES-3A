@@ -33,7 +33,6 @@ module.exports = {//function to verify token from client to then protect fronten
                         password,
 
                     });
-                    
                     //save user to collection
                     newUser.save()
                         .then((user) => {
@@ -56,7 +55,7 @@ module.exports = {//function to verify token from client to then protect fronten
         const email = req.body.email;
         const password = req.body.password;
 
-        if (!email || !password) {
+        if (email === ""|| password==="") {
             return res.status(400).json({
                 success: false,
                 message: "All fields are required"
@@ -93,7 +92,7 @@ module.exports = {//function to verify token from client to then protect fronten
                                     }
                                 );
                             } else {
-                                res.json({
+                                res.status(400).json({
                                     success: false,
                                     message: "incorrect password"
                                 });

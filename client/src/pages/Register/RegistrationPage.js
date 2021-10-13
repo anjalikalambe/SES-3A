@@ -24,7 +24,6 @@ class RegistrationPage extends Component {
   }
 
   handleRegistration = async (e) => {
-    console.log(this.state);
     e.preventDefault();
 
     if (this.state.confirmPassword === this.state.password) {
