@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import { DarkButton } from "../Buttons";
 import { Link as RouterLink } from "react-router-dom";
-import React, { Component } from react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function Header(users) {
