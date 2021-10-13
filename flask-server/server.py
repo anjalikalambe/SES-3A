@@ -8,6 +8,7 @@ app = Flask(__name__)
 clusterArr = []
 
 def cluster(arr):
+	arr.clear()
 	data = pd.read_csv('../ML/compiled_csv/clustered_profiles.csv')
 
 	# read row line by line
