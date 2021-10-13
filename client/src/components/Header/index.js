@@ -1,12 +1,13 @@
-import './style.css';
-import logoImg from './logo.png';
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import { DarkButton } from '../Buttons';
-import { Link as RouterLink } from 'react-router-dom';
+import "./style.css";
+import logoImg from "./logo.png";
+import Container from "@material-ui/core/Container";
+import Link from "@material-ui/core/Link";
+import { DarkButton } from "../Buttons";
+import { Link as RouterLink } from "react-router-dom";
+import React, { Component } from react';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function Header(props) {
+function Header(users) {
 	return (
 		<div className='header'>
 			<img className='logo' src={logoImg} />
