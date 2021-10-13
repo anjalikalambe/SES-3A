@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import Header from "../Header";
+import MaterialTable from 'material-table'
+
+
+let clusterSet = [1, 2, 3]
+let userId = 0
 class MachineLearningDashboard extends Component {
 	state = { users: [], data: [] };
+
+
 
 	componentDidMount() {
 		fetch("/members")
@@ -13,22 +20,35 @@ class MachineLearningDashboard extends Component {
 		return (
 			<div>
 				<Header />
-				<div className="box">
-					<div className="text1">
-						Clusters
-					</div>
+				<div className="text1">
+					Clusters
 				</div>
-				{/* example api succesful fetch */}
+				<div>
+				</div>
 				<div>
 					{typeof this.state.data.members === "undefined" ? (
 						<p>...loading</p>
 					) : (
 						this.state.data.members.map((member, i) => (
-							<ul>
-								<li key={i}>{member + ""}</li>
-							</ul>
+							<div key={i}>
+								{member.map((item, j) => (
+									<div key={j}>
+										<table class="table table-striped table-dark">
+											<thead>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">
+														<td>{"UserID: " + userId++}</td>
+														<td>{"Cluster Group: " + item}</td>
+													</th>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								))}
+							</div>
 						))
-						// this.state.data.members
 					)}
 				</div>
 			</div>
