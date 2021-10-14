@@ -1,12 +1,10 @@
-
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Profile from './pages/Profile';
-import Rooms from './pages/Rooms';
-
+import RoomZone from './pages/Rooms';
 
 class App extends Component {
 	state = { users: [], data: [] };
@@ -16,8 +14,7 @@ class App extends Component {
 		// 	.then(res => res.json())
 		// 	.then(users => this.setState({users}));
 
-
-		fetch("/members")
+		fetch('/members')
 			.then((res) => res.json())
 			.then((data) => this.setState({ data }, console.log(data)));
 	}
@@ -28,8 +25,8 @@ class App extends Component {
 				<Router>
 					<Header />
 					<Switch>
-						<Route path='/room'>
-							<Rooms />
+						<Route path='/roomZone'>
+							<RoomZone />
 						</Route>
 						<Route path='/profile'>
 							<Profile />

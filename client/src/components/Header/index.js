@@ -1,11 +1,11 @@
-import "./style.css";
-import logoImg from "./logo.png";
-import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
-import { DarkButton } from "../Buttons";
-import { Link as RouterLink } from "react-router-dom";
+import './style.css';
+import logoImg from './logo.png';
+import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
+import { DarkButton } from '../Buttons';
+import { Link as RouterLink } from 'react-router-dom';
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function Header(users) {
 	return (
@@ -15,7 +15,7 @@ function Header(users) {
 				<Link component={RouterLink} to='/' className='navigation'>
 					HOME
 				</Link>
-				<Link className='navigation' component={RouterLink} to='/Rooms'>
+				<Link className='navigation' component={RouterLink} to='/roomZone'>
 					ROOMS
 				</Link>
 				<Link href='#' className='navigation'>
