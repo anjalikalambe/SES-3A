@@ -21,13 +21,13 @@
     border-radius: 20px;
 }
 
-.form-group { 
+.form-group-login { 
     display: flex; 
     flex-direction: column;
     align-items: center; 
 }
 
-.form-group input { 
+.form-group-login input { 
     width: 515px;
     height: 83px;
     left: 710px;
@@ -49,7 +49,7 @@
 }
 
 
-.form-group h1 { 
+.form-group-login h1 { 
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
@@ -61,7 +61,7 @@
 
 }
 
-.form-group a { 
+.form-group-login a { 
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
@@ -74,7 +74,7 @@
         
 }
 
-.form-group button { 
+.form-group-login button { 
     width: 355px;
     height: 65px;
     left: 774px;

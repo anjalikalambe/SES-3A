@@ -57,25 +57,25 @@ const LoginPage = () => {
         <div class="login-container">
           <div class="login-box">
             <form id="login">
-              <div class="form-group">
+              <div class="form-group-login">
                 <h1>Sign in</h1>
               </div>
-              <div class="form-group">
-                <input type="text" id="email" name="email" placeholder="Email" onChange={(e) =>
+              <div class="form-group-login">
+                <input type="text" id="email-login" name="email" placeholder="Email" onChange={(e) =>
                   setState({ ...state, email: e.target.value })
                 }>
                 </input>
               </div>
-              <div class="form-group">
+              <div class="form-group-login">
                 <input type="password" id="password" name="password" placeholder="Password" required onChange={(e) =>
                   setState({ ...state, password: e.target.value })
                 }>
                 </input>
               </div>
-              <div class="form-group">
+              <div class="form-group-login">
                 <a href="#" target="_blank">Forgot password?</a>
               </div>
-              <div class="form-group">
+              <div class="form-group-login">
                 <button type="submit" form="login" value="Submit" onClick={handleLogin}>Sign in</button>
               </div>
             </form>
