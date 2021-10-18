@@ -4,13 +4,19 @@ const bcrypt = require('bcrypt')
 
 //creates a new schema for users which will represent each document added to the collection
 const userSchema = new Schema({
-    password: {
+    firstName: {
         type: String,
-        required: true,
-        trim: true,
-        minlength: 6
+        required: true
     },
-    name: {
+    lastName: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        required: true
+    },
+    gender: {
         type: String,
         required: true
     },
@@ -18,8 +24,17 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    description: {
-        type: String
+    location: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    clusterNumber: {
+        type: Number,
     },
 }, {
     timestamps: true
