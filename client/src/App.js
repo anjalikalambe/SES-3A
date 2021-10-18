@@ -1,67 +1,64 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
-import RegistrationPage from "./RegistrationPage";
+import { withRouter } from "react-router-dom";
+import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
+import LoginPage from "./pages/Login/LoginPage";
+import RegistrationPage from "./pages/Register/RegistrationPage";
+import { useStore } from "./stores/helpers/UseStore";
+import { observer } from "mobx-react-lite";
+import UserRoute from "./utils/UserRoute";
+import UnprotectedRoute from "./utils/UnprotectedRoute";
 import Reports from "./pages/Features/Reports";
-import Features from "./pages/Features";
 
-class App extends Component {
+const App = () => {
+	const { userAuth } = useStore(); //MobX persisted store
+	const [users, setUsers] = useState([]);
+	const [data, setData] = useState([]);
 
-	state = { users: [], data: [] };
 
-	componentDidMount() {
+
+	//Check if the authentication state is valid on page mount
+	console.log(JSON.stringify(userAuth));
+
+	useEffect(() => {
+		userAuth.validateToken();
+
 		// fetch('/users') //running port3000
 		// 	.then(res => res.json())
-		// 	.then(users => this.setState({users}));
+		// 	.then(users => setUsers(users));
 
-		fetch('/members')
-			.then(res => res.json())
-			.then(data => this.setState({ data }, console.log(data)));
-	}
+		fetch("/members")
+			.then((res) => res.json())
+			.then((data) => setData({ data }, console.log(data)));
 
-	render() {
-		return (
-			<div className="App">
-				<Router>
-					<Header />
-					<Switch>
-						<Route path="/profile">
-							<Profile />
-						</Route>
-						<Route path="/" exact={true}>
-							<Welcome />
-						</Route>
+	}, []);
 
-						<Route path="/register" exact={true}>
-							<RegistrationPage />
-						</Route>
+	return (
+		<div className="App">
+			<UnprotectedRoute path='/' exact component={Welcome} />
+			<UnprotectedRoute path='/profile' exact component={Profile} />
+			<UnprotectedRoute path='/login' exact component={LoginPage} />
+			<UnprotectedRoute path='/register' exact component={RegistrationPage} />
 
-						<Route path="/features" exact={true}>
-							<Features />
-						</Route>
+			{userAuth.loggedIn}
+			<UserRoute path='/rooms' exact component={MeetingRooms} />
+			<UserRoute path='/report' exact component={Reports} />
 
-						<Route path="/reports" exact={true}>
-							<Reports />
-						</Route>
-					</Switch>
-				</Router>
 
-				{/* example api succesful fetch */}
-				<div>
-					{(typeof this.state.data.members === 'undefined') ? (
-						<p>...loading</p>
-					) : (
-						this.state.data.members.map((member, i) => (
-							<p key={i}>{member}</p>
-						))
-					)}
-				</div>
+			{/* example api succesful fetch */}
+			<div>
+				{typeof data.members === 'undefined' ? (
+					<p>...loading</p>
+				) : (
+					data.members.map((member, i) => <p key={i}>{member}</p>)
+				)}
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
 
-export default App;
+export default withRouter(observer(App));
