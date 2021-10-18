@@ -12,7 +12,7 @@ import { useStore } from "./stores/helpers/UseStore";
 import { observer } from "mobx-react-lite";
 import UserRoute from "./utils/UserRoute";
 import UnprotectedRoute from "./utils/UnprotectedRoute";
-import Reports from "./pages/Features/Reports";
+import Reports from "./pages/Reports";
 
 const App = () => {
 	const { userAuth } = useStore(); //MobX persisted store

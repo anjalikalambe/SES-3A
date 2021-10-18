@@ -1,11 +1,11 @@
 import "././report.css"
 import React, {useState} from "react";
-import PurpleContainer from "../../../components/PurpleContainer";
-import WhiteInput from "../../../components/WhiteInput";
-import WhiteSelect from "../../../components/WhiteSelect";
+import PurpleContainer from "../../components/PurpleContainer";
+import WhiteInput from "../../components/WhiteInput";
+import WhiteSelect from "../../components/WhiteSelect";
 import Grid from "@material-ui/core/Grid";
-import {DarkPurpleButton} from "../../../components/Buttons";
-import Tables from "../../../components/Table";
+import Tables from "../../components/Table";
+import Sidebar from "../../components/Sidebar";
 
 function Reports() {
 	const [list, setList] = useState([{userId: 1, userName: 'test', gender: 'man'}])
@@ -27,6 +27,8 @@ function Reports() {
 
 	return (
 		<>
+				<Sidebar/>
+
 			<PurpleContainer width={600}>
 				<Grid item xs={12}>
 					<WhiteSelect onChange={(e)=>{

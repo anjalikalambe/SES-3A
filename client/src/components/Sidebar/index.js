@@ -7,7 +7,6 @@ import {Link as RouterLink} from "react-router-dom";
 import Link from '@material-ui/core/Link';
 
 
-
 const Sidebar = (props) => {
     const [inactive, setInactive] = useState(true);
 
@@ -50,13 +49,11 @@ const Sidebar = (props) => {
                 <li>
                     <a className='menu-item'>
                        <div className="menu-icon">
-                       <Link className="iconlink" component={RouterLink} to="/">
+                       <Link className="iconlink" component={RouterLink} to="/report">
                        <BsIcons.BsExclamationTriangleFill/>
                        </Link>
                        </div>
-                       <Link className="textlink" component={RouterLink} to="/">
-                       <span>Report</span>
-                       </Link></a>
+                       </a>
                 </li>
         </div>
 
