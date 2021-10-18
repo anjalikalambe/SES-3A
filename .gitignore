@@ -1,2 +1,4 @@
 /react-backend
 venv/
+/venv/*
+/.venv/*
