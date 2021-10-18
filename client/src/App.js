@@ -28,7 +28,7 @@ class App extends Component {
 							<Profile/>
 						</Route>
 						<Route path="/chat" exact>
-							<Chat/>
+							<Chat myId="my-test-id" otherId="other-test-id"/>
 						</Route>
 						<Route path="/">
 							<Welcome/>

@@ -14,6 +14,7 @@ import iconSmile from '../../assets/imgs/001.jpg'
 import {Picker} from 'emoji-mart'
 import 'emoji-mart/css/emoji-mart.css'
 import io from 'socket.io-client';
+import {Cloudinary} from 'cloudinary-core';
 
 const USER_TYPE = {
 	me: 0,
@@ -28,41 +29,28 @@ const DialogContent = withStyles((theme) => ({
 	},
 }))(MuiDialogContent);
 
+const cloud = new Cloudinary({cloud_name: 'dumvulsf6', secure: true});
+
 // Socket to server
 const socket = io.connect('ws://localhost:5000');
-// Join room - Replace with user authentication and user ID.
-// Room is unique to two users.
-const chatRoom = 'testroom';
-socket.emit('join', {'room': chatRoom});
 
-function Chat() {
+function Chat(props) {
 	const imgInputRef = useRef()
 	const [inputValue, setInputValue] = useState('')
-	const [chatList, setChatList] = useState([{
-		id: 1,
-		type: 0,
-		message: other,
-		messageType: 'picture'
-	}, {
-		id: 2,
-		type: 1,
-		message: other,
-		messageType: 'picture'
-	}, {
-		id: 3,
-		type: 0,
-		message: 'Test',
-		messageType: 'text'
-	}, {
-		id: 4,
-		type: 1,
-		message: 'Test',
-		messageType: 'text'
-	}
-	])
+	const [chatList, setChatList] = useState([]) // Populate with last few messages from db.
 	const [open, setOpen] = useState(false)
 	const [bigImgUrl, setBigImgUrl] = useState('')
 	const [showEmoji, setShowEmoji] = useState(false)
+
+	// Join a chat room based on given user IDs
+	const chatRoom = [props.myId, props.otherId].sort().join('');
+	socket.emit('join', {'room': chatRoom});
+
+	// Retrieve avatars from cloudinary
+	const AVATAR = {
+		me: cloud.url("avatar/" + props.myId),
+		other: cloud.url("avatar/" + props.otherId)
+	}
 
 	// Hook to listen for incoming messages to update chatList.
 	useEffect(() => {
@@ -103,7 +91,7 @@ function Chat() {
 		socket.emit('private_message', {
 			'message': msg,
 			'target': chatRoom,
-			// 'sender': 'senderID', // Provide sender's ID for db to store.
+			'sender': props.myId, // Provide sender's ID for db to store.
 			'type': msgType
 		});
 	}
@@ -203,9 +191,9 @@ function Chat() {
 														className={`${v.messageType === 'emoji' ? 'me-message-emoji' : 'me-message'}`}>{v.message}</div>
 											}
 
-											<Avatar src={me}/>
+											<Avatar src={AVATAR.me}/>
 										</div> : <div className='other'>
-											<Avatar src={other}/>
+											<Avatar src={AVATAR.other}/>
 
 											{
 												v.messageType === 'picture' ?
