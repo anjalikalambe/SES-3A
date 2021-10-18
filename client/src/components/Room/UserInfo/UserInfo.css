@@ -93,4 +93,16 @@
 .user-info-section-bottom {
 	color: white;
 	font-size: 15px;
+	padding: 15px;
+}
+
+.user-info-subsection {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.user-info-subsection img {
+	margin-right: 10px;
 }

@@ -14,7 +14,6 @@ const Room = () => {
 		<>
 			<div className="room">
 				<Sidebar />
-				<h1>Room</h1>
 				<UserInfo />
 			</div>
 		</>

@@ -3,6 +3,9 @@ import "./UserInfo.css";
 import redHeart from "../../../Assets/UserProfile/redHeart.png";
 import whiteHeart from "../../../Assets/UserProfile/whiteHeart.png";
 import location from "../../../Assets/UserProfile/location.png";
+import age from "../../../Assets/UserProfile/age.png";
+import gender from "../../../Assets/UserProfile/gender.png";
+import info from "../../../Assets/UserProfile/info.png";
 
 const UserInfo = () => {
 	const [likeStatus, setLikeStatus] = useState(false);
@@ -45,17 +48,34 @@ const UserInfo = () => {
 				</div>
 			</div>
 			<div className="user-info-section-bottom">
-				<h3>
+				<div className="user-info-subsection">
 					<img src={location} />
-					Sydney, Australia
-				</h3>
-				<h3>28</h3>
-				<h3>Hiking</h3>
-				<h3>Female</h3>
-				<h3>
-					My name is James, I enjoy going on hikes and meeting new
-					people. Looking for a relationship.
-				</h3>
+					<h3>Sydney, Australia</h3>
+				</div>
+				<div className="user-info-subsection">
+					<img src={age} alt="" />
+
+					<h3>28</h3>
+				</div>
+				<div className="user-info-subsection">
+					<img src={whiteHeart} alt="" />
+
+					<h3>Hiking</h3>
+				</div>
+
+				<div className="user-info-subsection">
+					<img src={gender} alt="" />
+
+					<h3>Female</h3>
+				</div>
+				<div className="user-info-subsection">
+					<img src={info} alt="" />
+
+					<h3>
+						My name is James, I enjoy going on hikes and meeting new
+						people. Looking for a relationship.
+					</h3>
+				</div>
 			</div>
 		</div>
 	);
