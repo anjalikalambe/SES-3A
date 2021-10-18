@@ -53,6 +53,8 @@ const Sidebar = (props) => {
                        <BsIcons.BsExclamationTriangleFill/>
                        </Link>
                        </div>
+                       <Link className="textlink" component={RouterLink} to="/report">
+                       <span>Report</span> </Link>
                        </a>
                 </li>
         </div>
