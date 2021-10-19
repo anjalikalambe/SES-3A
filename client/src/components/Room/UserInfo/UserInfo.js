@@ -9,6 +9,7 @@ import info from "../../../Assets/UserProfile/info.png";
 
 const UserInfo = () => {
 	const [likeStatus, setLikeStatus] = useState(false);
+	const [currentUser, setCurrentUser] = useState([]);
 
 	const handleLikeFunction = () => {
 		setLikeStatus(!likeStatus);
@@ -18,9 +19,7 @@ const UserInfo = () => {
 		<div className="user-info-section">
 			<div className="user-info-section-top">
 				<div className="user-info-top">
-					<button>Participants</button>
-					<button>Messages</button>
-					<button>Profile</button>
+					<h2>Profile</h2>
 				</div>
 				<div className="connected-user">
 					<span>You're currently connected to:</span>

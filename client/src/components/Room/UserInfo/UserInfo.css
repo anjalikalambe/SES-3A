@@ -54,6 +54,10 @@
 	color: white;
 }
 
+.user-info-top h2 {
+	color: white;
+}
+
 .user-profile-img {
 	border-radius: 50%;
 	width: 80px;
