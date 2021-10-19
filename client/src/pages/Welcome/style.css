@@ -24,6 +24,6 @@
   width:700px;
   height: 400px;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  top: 100px;
+  right: 0px;
 }
