@@ -1,15 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt')
 
 //creates a new schema for users which will represent each document added to the collection
 const userSchema = new Schema({
-    password: {
+    firstName: {
         type: String,
-        required: true,
-        trim: true,
-        minlength: 6
+        required: true
     },
-    name: {
+    lastName: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        required: true
+    },
+    gender: {
         type: String,
         required: true
     },
@@ -17,14 +24,38 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    description: {
-        type: String
+    location: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    clusterNumber: {
+        type: Number,
     },
 }, {
     timestamps: true
 
 }
 );
+
+userSchema.pre('save', async function (next) {
+    if (this.isModified("password") || this.isNew) {
+        try {
+            const salt = await bcrypt.genSalt(10)
+            const hashedPassword = await bcrypt.hash(this.password, salt)
+            this.password = hashedPassword
+            next()
+        } catch (error) {
+            next(error)
+        }
+    } else {
+        next();
+    }
+})
 
 const User = mongoose.model('User', userSchema);
 
