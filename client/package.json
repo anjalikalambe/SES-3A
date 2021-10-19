@@ -9,7 +9,12 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.22.0",
     "concurrently": "^6.2.1",
+    "interactjs": "^1.10.11",
+    "mobx": "^6.3.3",
+    "mobx-persist": "^0.4.1",
+    "mobx-react-lite": "^3.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
@@ -19,10 +24,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "dev": "concurrently \" cd ../flask-server && python3 server.py\" \"npm run start\" ",
     "dev2": "concurrently \" cd ../backend && npm run watch\" \"npm run start\" "
   },
@@ -43,5 +48,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.15.8",
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.1.8"
   }
 }
