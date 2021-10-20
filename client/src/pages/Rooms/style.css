@@ -36,12 +36,11 @@ html,
 }
 
 .drag-item {
-	height: 50px !important;
-	width: 50px !important;
+	height: 70px !important;
+	width: 100px !important;
 	border-radius: 50%;
 
-	background-color: #29e;
-	color: white;
+	/* background-color: #29e; */
 
 	padding: 4%;
 
@@ -109,4 +108,43 @@ html,
 
 .DropzoneContainer {
 	display: flex !important;
+}
+
+.test {
+	padding-top: 10%;
+	padding-left: -25%;
+}
+
+.test2 {
+	padding-top: 45%;
+	padding-left: 10%;
+}
+
+.test3 {
+	padding-top: 15%;
+	padding-left: 20%;
+}
+
+.item1 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/man.jpg') !important;
+	background-size: 110px 110px;
+}
+
+.item2 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/man1.jpg') !important;
+	background-size: 110px 110px;
+}
+
+.item3 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/woman2.jpg') !important;
+	background-size: 100px 100px;
+}
+
+.item4 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/woman1.jpg') !important;
+	background-size: 110px 110px;
 }

@@ -42,137 +42,142 @@ function Rooms() {
 				<Sidebar />
 				<div className='subRoom'>
 					<div className='DropzoneContainer'>
-						<Interactable
-							dropzone={true}
-							dropzoneOptions={{
-								accept: '.drag-item',
-								overlap: 0.75,
-								ondropactivate: function (event) {
-									event.target.classList.add('drop-active');
-								},
+						<div className='test'>
+							<Interactable
+								dropzone={true}
+								dropzoneOptions={{
+									accept: '.drag-item',
+									overlap: 0.75,
+									ondropactivate: function (event) {
+										event.target.classList.add('drop-active');
+									},
 
-								ondragenter: function (event) {
-									var draggableElement = event.relatedTarget,
-										dropzoneElement = event.target;
-									dropzoneElement.classList.add('drop-target');
-									draggableElement.classList.add('can-drop');
-									event.relatedTarget.textContent = 'Dragged in';
-									event.relatedTarget.style.backgroundColor = '#a2e665';
-								},
+									ondragenter: function (event) {
+										var draggableElement = event.relatedTarget,
+											dropzoneElement = event.target;
+										dropzoneElement.classList.add('drop-target');
+										draggableElement.classList.add('can-drop');
+										// event.relatedTarget.textContent = 'Dragged in';
+										event.relatedTarget.style.backgroundColor = '#a2e665';
+									},
 
-								ondragleave: function (event) {
-									event.target.classList.remove('drop-target');
-									event.relatedTarget.classList.remove('can-drop');
-									event.relatedTarget.textContent = 'Dragged out';
-									event.relatedTarget.style.backgroundColor = '#29e';
-								},
+									ondragleave: function (event) {
+										event.target.classList.remove('drop-target');
+										event.relatedTarget.classList.remove('can-drop');
+										// event.relatedTarget.textContent = 'Dragged out';
+										event.relatedTarget.style.backgroundColor = '#29e';
+									},
 
-								ondrop: function (event) {
-									console.log(event);
-								},
+									ondrop: function (event) {
+										console.log(event);
+									},
 
-								ondropdeactivate: function (event) {
-									event.target.classList.remove('drop-active');
-									event.target.classList.remove('drop-target');
-								},
-							}}
-						>
-							<div className='dropzone' id='outer-dropzone'>
-								<div className='DropzoneContent'></div>
-							</div>
-						</Interactable>
+									ondropdeactivate: function (event) {
+										event.target.classList.remove('drop-active');
+										event.target.classList.remove('drop-target');
+									},
+								}}
+							>
+								<div className='dropzone' id='outer-dropzone'>
+									<div className='DropzoneContent'></div>
+								</div>
+							</Interactable>
+						</div>
+						<div className='test2'>
+							<Interactable
+								dropzone={true}
+								dropzoneOptions={{
+									accept: '.drag-item',
+									overlap: 0.75,
+									ondropactivate: function (event) {
+										event.target.classList.add('drop-active');
+									},
 
-						<Interactable
-							dropzone={true}
-							dropzoneOptions={{
-								accept: '.drag-item',
-								overlap: 0.75,
-								ondropactivate: function (event) {
-									event.target.classList.add('drop-active');
-								},
+									ondragenter: function (event) {
+										var draggableElement = event.relatedTarget,
+											dropzoneElement = event.target;
+										dropzoneElement.classList.add('drop-target');
+										draggableElement.classList.add('can-drop');
+										// event.relatedTarget.textContent = 'Dragged in';
+										event.relatedTarget.style.backgroundColor = '#e665e3';
+									},
 
-								ondragenter: function (event) {
-									var draggableElement = event.relatedTarget,
-										dropzoneElement = event.target;
-									dropzoneElement.classList.add('drop-target');
-									draggableElement.classList.add('can-drop');
-									event.relatedTarget.textContent = 'Dragged in';
-									event.relatedTarget.style.backgroundColor = '#e665e3';
-								},
+									ondragleave: function (event) {
+										event.target.classList.remove('drop-target');
+										event.relatedTarget.classList.remove('can-drop');
+										// event.relatedTarget.textContent = 'Dragged out';
+										event.relatedTarget.style.backgroundColor = '#29e';
+									},
 
-								ondragleave: function (event) {
-									event.target.classList.remove('drop-target');
-									event.relatedTarget.classList.remove('can-drop');
-									event.relatedTarget.textContent = 'Dragged out';
-									event.relatedTarget.style.backgroundColor = '#29e';
-								},
+									ondrop: function (event) {
+										console.log(event);
+									},
 
-								ondrop: function (event) {
-									console.log(event);
-								},
+									ondropdeactivate: function (event) {
+										event.target.classList.remove('drop-active');
+										event.target.classList.remove('drop-target');
+									},
+								}}
+							>
+								<div className='dropzone' id='outer-dropzone'>
+									<div className='DropzoneContent'></div>
+								</div>
+							</Interactable>
+						</div>
+						<div className='test3'>
+							<Interactable
+								dropzone={true}
+								dropzoneOptions={{
+									accept: '.drag-item',
+									overlap: 0.75,
+									ondropactivate: function (event) {
+										event.target.classList.add('drop-active');
+									},
 
-								ondropdeactivate: function (event) {
-									event.target.classList.remove('drop-active');
-									event.target.classList.remove('drop-target');
-								},
-							}}
-						>
-							<div className='dropzone' id='outer-dropzone'>
-								<div className='DropzoneContent'></div>
-							</div>
-						</Interactable>
-						<Interactable
-							dropzone={true}
-							dropzoneOptions={{
-								accept: '.drag-item',
-								overlap: 0.75,
-								ondropactivate: function (event) {
-									event.target.classList.add('drop-active');
-								},
+									ondragenter: function (event) {
+										var draggableElement = event.relatedTarget,
+											dropzoneElement = event.target;
+										dropzoneElement.classList.add('drop-target');
+										draggableElement.classList.add('can-drop');
+										// event.relatedTarget.textContent = 'Dragged in';
+										event.relatedTarget.style.backgroundColor = '#6965e6';
+									},
 
-								ondragenter: function (event) {
-									var draggableElement = event.relatedTarget,
-										dropzoneElement = event.target;
-									dropzoneElement.classList.add('drop-target');
-									draggableElement.classList.add('can-drop');
-									event.relatedTarget.textContent = 'Dragged in';
-									event.relatedTarget.style.backgroundColor = '#6965e6';
-								},
+									ondragleave: function (event) {
+										event.target.classList.remove('drop-target');
+										event.relatedTarget.classList.remove('can-drop');
+										// event.relatedTarget.textContent = 'Dragged out';
+										event.relatedTarget.style.backgroundColor = '#29e';
+									},
 
-								ondragleave: function (event) {
-									event.target.classList.remove('drop-target');
-									event.relatedTarget.classList.remove('can-drop');
-									event.relatedTarget.textContent = 'Dragged out';
-									event.relatedTarget.style.backgroundColor = '#29e';
-								},
+									ondrop: function (event) {
+										console.log(event);
+									},
 
-								ondrop: function (event) {
-									console.log(event);
-								},
-
-								ondropdeactivate: function (event) {
-									event.target.classList.remove('drop-active');
-									event.target.classList.remove('drop-target');
-								},
-							}}
-						>
-							<div className='dropzone' id='outer-dropzone'>
-								<div className='DropzoneContent'></div>
-							</div>
-						</Interactable>
+									ondropdeactivate: function (event) {
+										event.target.classList.remove('drop-active');
+										event.target.classList.remove('drop-target');
+									},
+								}}
+							>
+								<div className='dropzone' id='outer-dropzone'>
+									<div className='DropzoneContent'></div>
+								</div>
+							</Interactable>
+						</div>
 					</div>
 					<div className='dragItems'>
 						<Interactable draggable={true} draggableOptions={draggableOptions}>
-							<div className='draggable drag-item'>Drag Item</div>
+							<div className='draggable drag-item item1'></div>
 						</Interactable>
 						<Interactable draggable={true} draggableOptions={draggableOptions}>
-							<div className='draggable drag-item'>Drag Item</div>
+							<div className='draggable drag-item item2'></div>
 						</Interactable>
 						<Interactable draggable={true} draggableOptions={draggableOptions}>
-							<div className='draggable drag-item'>Drag Item</div>
+							<div className='draggable drag-item item3'></div>
 						</Interactable>
 						<Interactable draggable={true} draggableOptions={draggableOptions}>
-							<div className='draggable drag-item'>Drag Item</div>
+							<div className='draggable drag-item item4'></div>
 						</Interactable>
 					</div>
 				</div>
