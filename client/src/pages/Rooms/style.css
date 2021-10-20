@@ -36,8 +36,8 @@ html,
 }
 
 .drag-item {
-	height: 70px !important;
-	width: 100px !important;
+	height: 500px !important;
+	width: 90px !important;
 	border-radius: 50%;
 
 	/* background-color: #29e; */
@@ -102,8 +102,8 @@ html,
 	display: flex !important;
 }
 .drag-item {
-	width: 100px;
-	height: 100px;
+	width: 100px !important;
+	height: 45px !important;
 }
 
 .DropzoneContainer {
@@ -112,17 +112,21 @@ html,
 
 .test {
 	padding-top: 10%;
-	padding-left: -25%;
+	padding-left: 25% !important;
 }
 
 .test2 {
 	padding-top: 45%;
-	padding-left: 10%;
+	padding-left: 5%;
 }
 
 .test3 {
 	padding-top: 15%;
-	padding-left: 20%;
+	padding-left: 5%;
+}
+.test4 {
+	padding-top: 35%;
+	padding-left: 15%;
 }
 
 .item1 {
@@ -147,4 +151,50 @@ html,
 	background-repeat: no-repeat;
 	background-image: url('./Assets/woman1.jpg') !important;
 	background-size: 110px 110px;
+}
+.item5 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/woman3.jpg') !important;
+	background-size: 110px 110px;
+}
+.item6 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/woman4.jpg') !important;
+	background-size: 110px 110px;
+}
+.item7 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/man3.jpg') !important;
+	background-size: 110px 110px;
+}
+.item8 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/man4.jpg') !important;
+	background-size: 110px 110px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 65px !important;
+	display: block;
+
+	display: flex;
+	justify-content: center;
+}
+
+.white {
+	color: white !important;
+}
+
+.leave {
+	padding-left: 300px;
+}
+
+.new {
+	background-color: white !important;
+	color: blue !important;
+	margin-top: -5px !important;
 }

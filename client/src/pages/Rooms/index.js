@@ -3,6 +3,7 @@ import './style.css';
 import Interactable from './Interactable';
 import Sidebar from '../../components/Sidebar';
 import { BsAlignCenter } from 'react-icons/bs';
+import { DarkButton } from '../../components/Buttons';
 
 /* TODO / Notes: 
  
@@ -165,6 +166,47 @@ function Rooms() {
 								</div>
 							</Interactable>
 						</div>
+						<div className='test4'>
+							<Interactable
+								dropzone={true}
+								dropzoneOptions={{
+									accept: '.drag-item',
+									overlap: 0.75,
+									ondropactivate: function (event) {
+										event.target.classList.add('drop-active');
+									},
+
+									ondragenter: function (event) {
+										var draggableElement = event.relatedTarget,
+											dropzoneElement = event.target;
+										dropzoneElement.classList.add('drop-target');
+										draggableElement.classList.add('can-drop');
+										// event.relatedTarget.textContent = 'Dragged in';
+										event.relatedTarget.style.backgroundColor = '#6965e6';
+									},
+
+									ondragleave: function (event) {
+										event.target.classList.remove('drop-target');
+										event.relatedTarget.classList.remove('can-drop');
+										// event.relatedTarget.textContent = 'Dragged out';
+										event.relatedTarget.style.backgroundColor = '#29e';
+									},
+
+									ondrop: function (event) {
+										console.log(event);
+									},
+
+									ondropdeactivate: function (event) {
+										event.target.classList.remove('drop-active');
+										event.target.classList.remove('drop-target');
+									},
+								}}
+							>
+								<div className='dropzone' id='outer-dropzone'>
+									<div className='DropzoneContent'></div>
+								</div>
+							</Interactable>
+						</div>
 					</div>
 					<div className='dragItems'>
 						<Interactable draggable={true} draggableOptions={draggableOptions}>
@@ -179,8 +221,30 @@ function Rooms() {
 						<Interactable draggable={true} draggableOptions={draggableOptions}>
 							<div className='draggable drag-item item4'></div>
 						</Interactable>
+						<Interactable draggable={true} draggableOptions={draggableOptions}>
+							<div className='draggable drag-item item5'></div>
+						</Interactable>
+						<Interactable draggable={true} draggableOptions={draggableOptions}>
+							<div className='draggable drag-item item6'></div>
+						</Interactable>
+						<Interactable draggable={true} draggableOptions={draggableOptions}>
+							<div className='draggable drag-item item7'></div>
+						</Interactable>
+						<Interactable draggable={true} draggableOptions={draggableOptions}>
+							<div className='draggable drag-item item8'></div>
+						</Interactable>
 					</div>
 				</div>
+			</div>
+			<div className='footer'>
+				<p className='white'>Test Group 4</p>
+				<DarkButton
+					variant='contained'
+					color='white'
+					className='login-button new'
+				>
+					Leave Room
+				</DarkButton>
 			</div>
 		</div>
 	);
