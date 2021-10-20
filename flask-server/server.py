@@ -1,10 +1,20 @@
+from decouple import Config, RepositoryEnv
 from flask import Flask, jsonify, send_from_directory
+from flask_pymongo import PyMongo
 from flask_socketio import SocketIO, close_room, join_room, leave_room, send, emit
+from models import ChatMessage, ChatRoom
 import socketio
 
 app = Flask(__name__)
 # app = Flask(__name__, static_url_path="", static_folder="../client/build")
 socketio = SocketIO(app, cors_allowed_origins="http://localhost:3000")
+
+# Get mongodb
+ENV_FILE = "../backend/.env"
+env_config = Config(RepositoryEnv(ENV_FILE))
+app.config["MONGO_URI"] = env_config.get("ATLAS_URI")
+
+db = PyMongo(app).db
 
 # @app.route("/", defaults={"path": ""})
 # def serve(path):
