@@ -10,7 +10,6 @@ function BlueContainer(props){
 			minHeight: 400,
 			padding: 20,
 			margin: '50px auto',
-            position: 'relative',
 		},
 	})();
 	return(

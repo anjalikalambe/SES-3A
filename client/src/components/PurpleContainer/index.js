@@ -8,7 +8,7 @@ function PurpleContainer(props){
 		root: {
 			width: props.width,
 			backgroundColor: '#7573F9',
-			minHeight: 400,
+			minHeight: 25,
 			padding: 20,
 			margin: '50px auto',
 		},

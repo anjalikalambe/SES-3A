@@ -15,6 +15,7 @@ import { useStore } from "./stores/helpers/UseStore";
 import { observer } from "mobx-react-lite";
 import UserRoute from "./utils/UserRoute";
 import UnprotectedRoute from "./utils/UnprotectedRoute";
+import Reports from "./pages/Reports";
 
 const App = () => {
 	const { userAuth } = useStore(); //MobX persisted store
@@ -51,6 +52,7 @@ const App = () => {
 
 			{userAuth.loggedIn}
 			<UserRoute path='/rooms' exact component={MeetingRooms} />
+			<UserRoute path='/report' exact component={Reports} />
 			<UserRoute path='/roomZone' exact component={RoomZone} />
 					
 			{/* example api succesful fetch */}
