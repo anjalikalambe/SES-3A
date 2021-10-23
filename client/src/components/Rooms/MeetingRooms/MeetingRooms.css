@@ -17,6 +17,7 @@
 }
 
 .meetingRooms__main {
+	height: 75vh;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
