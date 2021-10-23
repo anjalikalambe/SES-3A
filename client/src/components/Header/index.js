@@ -25,7 +25,12 @@ function Header(users) {
 					PROFILE
 				</Link>
 			</Container>
-			<DarkButton variant='contained' color='primary' className='login-button'>
+			<DarkButton
+				variant="contained"
+				color="primary"
+				className="login-button"
+				href="/login"
+			>
 				Log In
 			</DarkButton>
 		</div>
