@@ -178,7 +178,7 @@ input:focus {
     outline: none; 
 }
 
-p { 
+.form-group p { 
     width: 540px;
     height: 51px;
     left: 701px;
