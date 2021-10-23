@@ -10,6 +10,7 @@ import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
 import LoginPage from "./pages/Login/LoginPage";
 import RegistrationPage from "./pages/Register/RegistrationPage";
 import RoomZone from './pages/Rooms';
+import Room from "./components/Room/Room";
 			
 import { useStore } from "./stores/helpers/UseStore";
 import { observer } from "mobx-react-lite";
@@ -49,8 +50,7 @@ const App = () => {
 			{userAuth.loggedIn}
 			<UserRoute path='/rooms' exact component={MeetingRooms} />
 			<UserRoute path='/roomZone' exact component={RoomZone} />
-					
-
+			<UserRoute path='/room' exact component={Room} />
 
 			{/* example api succesful fetch */}
 			<div>
