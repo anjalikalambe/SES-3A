@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './RegistrationPage.css';
-import Header from "../../components/Header";
 import axios from 'axios';
 
 class RegistrationPage extends Component {
@@ -63,8 +62,6 @@ class RegistrationPage extends Component {
   render() {
     return (
       <div class="RegistrationPage">
-        <Header />
-
         <div class="signup-container">
           <div class="signup-box">
             <form id="signup">
