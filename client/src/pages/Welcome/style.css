@@ -23,7 +23,7 @@
 .bgImage{
   width:700px;
   height: 400px;
-  position: fixed;
-  top: 100px;
+  position: absolute;
   right: 0px;
+  bottom: 0px;
 }

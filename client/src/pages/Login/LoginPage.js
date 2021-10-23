@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
-import Header from "../../components/Header";
 import axios from 'axios';
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../stores/helpers/UseStore";
@@ -52,8 +51,6 @@ const LoginPage = () => {
 
   return (
     <div class="LoginPage">
-        <Header />
-
         <div class="login-container">
           <div class="login-box">
             <form id="login">

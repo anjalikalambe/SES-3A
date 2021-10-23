@@ -10,7 +10,6 @@ import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
 import LoginPage from "./pages/Login/LoginPage";
 import RegistrationPage from "./pages/Register/RegistrationPage";
 import RoomZone from './pages/Rooms';
-import Room from "./components/Room/Room";
 			
 import { useStore } from "./stores/helpers/UseStore";
 import { observer } from "mobx-react-lite";
@@ -42,6 +41,9 @@ const App = () => {
 
 	return (
 		<div className="App">
+			{/* show navbar only when not signed in */}
+			{!userAuth.loggedIn ? <Header /> : <div></div>}
+
 			<UnprotectedRoute path='/' exact component={Welcome} />
 			<UnprotectedRoute path='/profile' exact component={Profile} />
 			<UnprotectedRoute path='/login' exact component={LoginPage} />

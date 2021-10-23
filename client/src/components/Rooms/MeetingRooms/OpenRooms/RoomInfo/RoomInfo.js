@@ -5,6 +5,7 @@ import maleImg from "../../../../../Assets/MeetingRoomAssets/maleImg.png";
 import femaleIcon from "../../../../../Assets/MeetingRoomAssets/femaleIcon.png";
 import matchesImg from "../../../../../Assets/MeetingRoomAssets/matchesImg.png";
 import roomLocked from "../../../../../Assets/MeetingRoomAssets/roomLocked.png";
+import { Button } from "@material-ui/core";
 
 const RoomInfo = ({ roomInfo }) => {
 	const [status, setStatus] = useState(false);
@@ -52,7 +53,7 @@ const RoomInfo = ({ roomInfo }) => {
 						: "roomInfoJoin__buttonClosed"
 				}
 			>
-				<h5>{status ? <h4>Join Room</h4> : <h4>Room Locked</h4>}</h5>
+				<h5>{status ? <Button style={{fontSize: "smaller"}}href="/roomZone">Join Room</Button> : <h4>Room Locked</h4>}</h5>
 				<img src={status ? joinIcon : roomLocked} alt="" />
 			</div>
 		</div>

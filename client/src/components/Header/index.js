@@ -6,7 +6,6 @@ import { DarkButton } from '../Buttons';
 import { Link as RouterLink } from 'react-router-dom';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Room from "../Room/Room";
 
 function Header(users) {
 	return (
