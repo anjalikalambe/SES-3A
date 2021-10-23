@@ -5,7 +5,8 @@ import Link from '@material-ui/core/Link';
 import { DarkButton } from '../Buttons';
 import { Link as RouterLink } from 'react-router-dom';
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Room from "../Room/Room";
 
 function Header(users) {
 	return (
@@ -18,11 +19,19 @@ function Header(users) {
 				<Link className='navigation' component={RouterLink} to='/roomZone'>
 					ROOMS
 				</Link>
-				<Link href='#' className='navigation'>
+				<Link
+					className="navigation"
+					component={RouterLink}
+					to="/features"
+				>
+
 					FEATURES
 				</Link>
 				<Link className='navigation' component={RouterLink} to='/profile'>
 					PROFILE
+				</Link>
+				<Link href="/room" className="navigation">
+					ROOM
 				</Link>
 			</Container>
 			<DarkButton
