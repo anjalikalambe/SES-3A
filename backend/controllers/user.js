@@ -2,7 +2,7 @@ const User = require("../models/User");
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 
-module.exports = {//function to verify token from client to then protect frontend routes. 
+module.exports = { 
     register: function (req, res) {
         console.log(req.body);
         const firstName = req.body.firstName;
@@ -76,7 +76,7 @@ module.exports = {//function to verify token from client to then protect fronten
                             if (isMatch) {
                                 const payload = {
                                     id: user.id,
-                                    username: user.email
+                                    email: user.email
                                 }
                                 jwt.sign(
                                     payload,
@@ -85,7 +85,7 @@ module.exports = {//function to verify token from client to then protect fronten
                                     (err, token) => {
                                         res.json({
                                             success: true,
-                                            username: user.email,
+                                            email: user.email,
                                             token: "Bearer " + token,
                                             message: "Successful login!"
                                         });
@@ -107,5 +107,31 @@ module.exports = {//function to verify token from client to then protect fronten
                     err: 'error'
                 });
             })
+    },
+    verifyToken: function (req, res) {
+        const authorization = req.headers.authorization;
+        if (authorization && authorization.split(' ')[0] === 'Bearer') {
+            // use jwt verify to check the token passsed through in position 1 of array made using split.
+
+            const token = req.headers.authorization.split(' ')[2];
+            jwt.verify(token, process.env.USERSECRET, (err, decoded) => {
+                if (err) {
+                    res.json({
+                        success: false,
+                        message: "Unauthorised"
+                    });
+                } else {
+                    res.json({
+                        success: true,
+                        message: "Authorised"
+                    });
+                }
+            })
+        } else {
+            res.json({
+                success: false,
+                message: "No token provided"
+            });
+        } 
     }
 }

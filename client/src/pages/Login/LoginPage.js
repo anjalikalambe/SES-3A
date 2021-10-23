@@ -1,82 +1,89 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './LoginPage.css';
 import Header from "../../components/Header";
 import axios from 'axios';
+import { observer } from "mobx-react-lite";
+import { useStore } from "../../stores/helpers/UseStore";
+import { useHistory } from "react-router-dom";
 
-class LoginPage extends Component {
-  constructor(props) {
-    super(props);
+const LoginPage = () => {
+  const {
+    userAuth,
+  } = useStore();
+  const history = useHistory();
 
-    this.state = {
-      email: '',
-      password: ''
-    }
-  }
+  const [state, setState] = useState({
+    email: '',
+    password: ''
+  });
 
-  componentDidMount() {
-    this.clearState();
-  }
-
-  handleLogin = async (e) => {
-    console.log(this.state);
-    e.preventDefault();
-
-    try {
-      let response = await axios.post("http://localhost:5000/user/login", {
-        email: this.state.email,
-        password: this.state.password,
-      });
-      console.log(response.data.message);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  clearState = () => {
-    this.setState({
+  const clearState = () => {
+    setState({
       email: "",
       password: ""
     });
   };
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    console.log(state);
 
-  render() {
-    return (
-      <div class="LoginPage">
+    try {
+      let response = await axios.post("http://localhost:5000/user/login", {
+        email: state.email,
+        password: state.password,
+      });
+      console.log(response.data);
+
+      //Register the login in MobX's persisted state
+      //Lets user refresh page and maintain auth state
+      if (response.data.success) {
+        userAuth.login({
+          token: response.data.token,
+          username: response.data.username,
+        }, () => {
+          history.push('/rooms');
+        })
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  return (
+    <div class="LoginPage">
         <Header />
 
         <div class="login-container">
           <div class="login-box">
             <form id="login">
-              <div class="form-group">
+              <div class="form-group-login">
                 <h1>Sign in</h1>
               </div>
-              <div class="form-group">
-                <input type="text" id="email" name="email" placeholder="Email" onChange={(e) =>
-                  this.setState({ email: e.target.value })
+              <div class="form-group-login">
+                <input type="text" id="email-login" name="email" placeholder="Email" onChange={(e) =>
+                  setState({ ...state, email: e.target.value })
                 }>
                 </input>
               </div>
-              <div class="form-group">
+              <div class="form-group-login">
                 <input type="password" id="password" name="password" placeholder="Password" required onChange={(e) =>
-                  this.setState({ password: e.target.value })
+                  setState({ ...state, password: e.target.value })
                 }>
                 </input>
               </div>
-              <div class="form-group">
+              <div class="form-group-login">
                 <a href="#" target="_blank">Forgot password?</a>
               </div>
-              <div class="form-group">
-                <button type="submit" form="login" value="Submit" onClick={this.handleLogin}>Sign in</button>
+              <div class="form-group-login">
+                <button type="submit" form="login" value="Submit" onClick={handleLogin}>Sign in</button>
               </div>
             </form>
           </div>
 
         </div>
       </div>
+  );
+};
 
-    );
-  }
-}
-
-export default LoginPage;
+export default observer(LoginPage);
