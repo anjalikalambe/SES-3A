@@ -4,13 +4,13 @@ import WhiteInput from "../../components/WhiteInput";
 import Avatar from '@material-ui/core/Avatar'
 import Grid from "@material-ui/core/Grid";
 import React, {useRef, useState, useEffect, useCallback} from "react";
-import me from '../../assets/imgs/chat-picture1.jpg'
-import other from '../../assets/imgs/chat-picture2.jpg'
-import addIcon from '../../assets/imgs/002.jpg'
+import me from '../../Assets/imgs/chat-picture1.jpg'
+import other from '../../Assets/imgs/chat-picture2.jpg'
+import addIcon from '../../Assets/imgs/002.jpg'
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import {withStyles} from '@material-ui/core/styles';
-import iconSmile from '../../assets/imgs/001.jpg'
+import iconSmile from '../../Assets/imgs/001.jpg'
 import {Picker} from 'emoji-mart'
 import 'emoji-mart/css/emoji-mart.css'
 import io from 'socket.io-client';

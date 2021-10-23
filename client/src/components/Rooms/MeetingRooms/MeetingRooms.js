@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./MeetingRooms.css";
 import ProfileCard from "./ProfileCard/ProfileCard";
 import RoomsList from "./RoomsList/RoomsList";
-import roomsIcon from "../../../assets/MeetingRoomAssets/RoomsIcons.png";
+import roomsIcon from "../../../Assets/MeetingRoomAssets/RoomsIcons.png";
 import OpenRooms from "./OpenRooms/OpenRooms";
 import FindRoom from "../FindRoom/FindRoom";
 import Sidebar from "../../../components/Sidebar"

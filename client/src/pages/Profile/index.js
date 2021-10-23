@@ -5,7 +5,7 @@ import WhiteSelect from "../../components/WhiteSelect";
 import Grid from "@material-ui/core/Grid";
 import React, {useRef} from "react";
 import {DarkPurpleButton} from "../../components/Buttons";
-import avatar from '../../assets/imgs/camera.png'
+import avatar from '../../Assets/imgs/camera.png'
 
 
 function Profile() {
