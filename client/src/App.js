@@ -50,12 +50,11 @@ const App = () => {
 			{userAuth.loggedIn}
 			<UserRoute path='/rooms' exact component={MeetingRooms} />
 			<UserRoute path='/roomZone' exact component={RoomZone} />
-			<UserRoute path='/room' exact component={Room} />
-
+					
 			{/* example api succesful fetch */}
 			<div>
 				{typeof data.members === 'undefined' ? (
-					<p>...loading</p>
+					<p> </p> //removed loading comment as it was showing on every screen
 				) : (
 					data.members.map((member, i) => <p key={i}>{member}</p>)
 				)}

@@ -4,6 +4,8 @@ import Interactable from './Interactable';
 import Sidebar from '../../components/Sidebar';
 import { BsAlignCenter } from 'react-icons/bs';
 import { DarkButton } from '../../components/Buttons';
+import UserInfo from "../../components/UserInfo/UserInfo";
+
 
 /* TODO / Notes: 
  
@@ -39,7 +41,7 @@ function Rooms() {
 	};
 	return (
 		<div className='Container'>
-			<div className='Room'>
+			<div className='Room' style={{display: 'flex', flexDirection: 'row'}}>
 				<Sidebar />
 				<div className='subRoom'>
 					<div className='DropzoneContainer'>
@@ -235,6 +237,7 @@ function Rooms() {
 						</Interactable>
 					</div>
 				</div>
+				<UserInfo />
 			</div>
 			<div className='footer'>
 				<p className='white'>Test Group 4</p>
