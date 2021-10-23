@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./FindRoom.css";
-import findRoom from "../../../Assets/MeetingRoomAssets/findRoom.png";
-import search from "../../../Assets/MeetingRoomAssets/search.png";
+import findRoom from "../../../assets/MeetingRoomAssets/findRoom.png";
+import search from "../../../assets/MeetingRoomAssets/search.png";
 import RoomFound from "./RoomFound/RoomFound";
 
 const FindRoom = () => {

@@ -1,7 +1,7 @@
 import React from "react";
-import calendar from "../../../../Assets/MeetingRoomAssets/calendar.png";
-import location from "../../../../Assets/MeetingRoomAssets/location.png";
-import love from "../../../../Assets/MeetingRoomAssets/love.png";
+import calendar from "../../../../assets/MeetingRoomAssets/calendar.png";
+import location from "../../../../assets/MeetingRoomAssets/location.png";
+import love from "../../../../assets/MeetingRoomAssets/love.png";
 const RoomFoundMatch = () => {
 	return (
 		<div className="roomFound__matches">

@@ -1,0 +1,89 @@
+.chat-container{
+    max-height: 400px;
+    overflow: auto !important;
+    position: relative;
+    width: 100%;
+}
+
+.title{
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.chat-container .chat-item{
+margin: 12px 0;
+}
+
+.me,.other{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.other{
+    justify-content: flex-start;
+}
+
+.me-message,.me-message-emoji{
+    color: #fff;
+    margin-right: 12px;
+}
+
+.me-message-emoji{
+    font-size: 24px;
+}
+
+.other-message,.other-message-emoji{
+    color: #fff;
+    margin-left: 12px;
+}
+
+.other-message-emoji{
+    font-size: 24px;
+}
+
+
+.name{
+    float: left;
+    color: #282c34;
+}
+
+.chat-img{
+    cursor: pointer;
+    width: 80px;
+    margin-left: 12px;
+}
+
+.chat-img-me{
+    cursor: pointer;
+    width: 80px;
+    margin-right: 12px;
+}
+
+.input-wrapper{
+    display: flex;
+}
+
+.add-icon{
+    width: 41px;
+    height: 41px;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.big-img-url{
+    width: 780px;
+    height: 560px;
+
+}
+
+.emoji-container{
+    background-color: #fff;
+    padding: 12px;
+}
+
+.emoji-mart-emoji{
+    border: none;
+    cursor: pointer;
+}

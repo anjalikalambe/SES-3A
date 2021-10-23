@@ -7,3 +7,29 @@
     float: left;
     color: #282c34;
 }
+
+.avatar-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    position: relative;
+}
+
+.avatar-img{
+    width: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    cursor: pointer;
+}
+
+.upload-input{
+    display: none;
+}
