@@ -6,9 +6,23 @@ import location from "../../Assets/UserProfile/location.png";
 import age from "../../Assets/UserProfile/age.png";
 import gender from "../../Assets/UserProfile/gender.png";
 import info from "../../Assets/UserProfile/info.png";
+import Modal from 'react-bootstrap/Modal'
+import ModalHeader from 'react-bootstrap/ModalHeader'
+import ModalTitle from 'react-bootstrap/ModalTitle'
+import ModalFooter from 'react-bootstrap/ModalFooter'
+// import Button from 'react-bootstrap/Button'
+import Chat from "../../pages/Chat/index";
+import { Button } from "@material-ui/core";
+
 
 const UserInfo = () => {
 	const [likeStatus, setLikeStatus] = useState(false);
+
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 
 	const handleLikeFunction = () => {
 		setLikeStatus(!likeStatus);
@@ -19,7 +33,18 @@ const UserInfo = () => {
 			<div className="user-info-section-top">
 				<div className="user-info-top">
 					<button>Participants</button>
-					<button>Messages</button>
+					<Button href="/chat"><button>Messages</button></Button>
+					<Modal show={show} onHide={handleClose}>
+						<Modal.Header closeButton>
+							<Modal.Title>Chat</Modal.Title>
+						</Modal.Header>
+						<Chat />
+						<Modal.Footer>
+							<Button variant="primary" onClick={handleClose}>
+								Close
+							</Button>
+						</Modal.Footer>
+					</Modal>
 					<button>Profile</button>
 				</div>
 				<div className="connected-user">

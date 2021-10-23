@@ -49,8 +49,8 @@ const Sidebar = (props) => {
                     <li>
                         <a className='menu-item'>
                             <div className="menu-icon">
-                                <Link className="iconlink" component={RouterLink} to="/">
-                                    <BiIcons.BiChat />
+                                <Link className="iconlink" component={RouterLink} to="/chat">
+                                    <BiIcons.BiChat/>
                                 </Link>
                             </div>
                             <Link className="textlink" component={RouterLink} to="/">

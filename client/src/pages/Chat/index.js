@@ -32,7 +32,7 @@ const DialogContent = withStyles((theme) => ({
 const cloud = new Cloudinary({cloud_name: 'dumvulsf6', secure: true});
 
 // Socket to server
-const socket = io.connect('ws://localhost:5000');
+const socket = io.connect('ws://localhost:3000');
 
 function Chat(props) {
 	const imgInputRef = useRef()
