@@ -1,93 +1,201 @@
- html, body{
-    width: 100%;
-    height: 100%;
-  }
-  
-  .wrapper{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .container {
-    height: 80%;
-    width: 80%;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+html,
+.Roombody {
+	width: 100%;
+	height: 100%;
+}
 
-   .drag-item {
-    height: 50px !important;
-    width: 50px !important;
-    border-radius: 50%;
-  
-    background-color: #29e;
-    color: white;
-  
-    padding: 4%;
-  
-    -webkit-transform: translate(0px, 0px);
-    transform: translate(0px, 0px);
-  }
-  
-  #outer-dropzone {
-    height: 140px;
-  }
-  
-  #inner-dropzone {
-    height: 80px;
-  }
-  
-  .dropzone {
-    background-color: rgb(241, 191, 191);
-    border: dashed 4px transparent;
-    border-radius: 4px;
-    margin: 10px auto 30px;
-    padding: 10px;
-    width: 250px !important;
-    height: 250px !important;
-    transition: background-color 0.3s;
-    border-radius: 50%;
-  }
-  
-  .drop-active {
-    border-color: #aaa;
-  }
-  
-  .drop-target {
-    background-color: #29e;
-    border-color: #fff;
-    border-style: solid;
-  }
-  
-  .drag-drop {
-    display: inline-block;
-    min-width: 40px;
-    padding: 2em 0.5em;
-  
-    color: #fff;
-    background-color: #29e;
-    border: solid 2px #fff;
-  
-    -webkit-transform: translate(0px, 0px);
-    transform: translate(0px, 0px);
-  
-    transition: background-color 0.3s;
-  }
-  
-  .drag-drop.can-drop {
-    color: #000;
-    background-color: #4e4;
-  }
+.wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-  .dragItems {
+.container {
+	height: 80%;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.Room {
+	background-color: navy !important;
+}
+
+.subRoom {
+	border-radius: 100px 95px 0px 0px;
+	background-color: lightgoldenrodyellow;
+	height: 100vh; /* Magic here */
+	display: flex;
+	width: 100%;
+	margin-left: 5%;
+	margin-right: 20% !important;
+}
+
+.drag-item {
+	height: 500px !important;
+	width: 90px !important;
+	border-radius: 50%;
+	padding: 4%;
+	-webkit-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+}
+
+#outer-dropzone {
+	height: 140px;
+}
+
+#inner-dropzone {
+	height: 80px;
+}
+
+.dropzone {
+	background-color: rgb(241, 191, 191);
+	border: dashed 4px transparent;
+	border-radius: 4px;
+	margin: 10px auto 30px;
+	padding: 10px;
+	width: 200px !important;
+	height: 200px !important;
+	transition: background-color 0.3s;
+	border-radius: 50%;
+}
+
+.drop-active {
+	border-color: #aaa;
+}
+
+.drop-target {
+	background-color: #29e;
+	border-color: #fff;
+	border-style: solid;
+}
+
+.drag-drop {
+	display: inline-block;
+	min-width: 40px;
+	padding: 2em 0.5em;
+
+	color: #fff;
+	background-color: #29e;
+	border: solid 2px #fff;
+
+	-webkit-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+
+	transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+	color: #000;
+	background-color: #4e4;
+}
+
+.dragItems {
+	display: flex !important;
+	margin-left: 15%;
+	height: max-content;
+}
+.drag-item {
+    width: 75px !important;
+    height: 30px !important;
+}
+
+.DropzoneContainer {
     display: flex !important;
-  }
+    position: fixed;
+    max-width: inherit;
+    max-height: inherit;
+}
 
-  .DropzoneContainer {
-    display: flex !important;
-  }
+.test {
+	padding-top: 10%;
+	margin-left: 1%;
+}
+
+.test2 {
+	padding-top: 45%;
+	padding-left: 5%;
+}
+
+.test3 {
+	padding-top: 15%;
+	padding-left: 5%;
+}
+.test4 {
+	padding-top: 35%;
+	padding-left: 15%;
+}
+
+.item1 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/man.jpg') !important;
+	background-size: 80px 80px;
+}
+
+.item2 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/man1.jpg') !important;
+	background-size: 80px 80px;
+}
+
+.item3 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/woman2.jpg') !important;
+	background-size: 80px 80px;
+}
+
+.item4 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/woman1.jpg') !important;
+	background-size: 80px 80px;
+}
+.item5 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/woman3.jpg') !important;
+	background-size: 80px 80px;
+}
+.item6 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/woman4.jpg') !important;
+	background-size: 80px 80px;
+}
+.item7 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/man3.jpg') !important;
+	background-size: 80px 80px;
+
+}
+.item8 {
+	background-repeat: no-repeat;
+	background-image: url('./Assets/man4.jpg') !important;
+	background-size: 80px 80px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 65px !important;
+	display: block;
+
+	display: flex;
+	justify-content: center;
+}
+
+.white {
+	color: white !important;
+}
+
+.leave {
+	padding-left: 300px;
+}
+
+.new {
+	background-color: white !important;
+	color: blue !important;
+	margin-top: -5px !important;
+}
