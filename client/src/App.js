@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { withRouter } from "react-router-dom";
+			
 import Welcome from "./pages/Welcome";
 import Profile from "./pages/Profile";
-import Room from "./components/Room/Room";
-
-import { withRouter } from "react-router-dom";
 import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
 import LoginPage from "./pages/Login/LoginPage";
 import RegistrationPage from "./pages/Register/RegistrationPage";
+import RoomZone from './pages/Rooms';
+import Room from "./components/Room/Room";
+			
 import { useStore } from "./stores/helpers/UseStore";
 import { observer } from "mobx-react-lite";
 import UserRoute from "./utils/UserRoute";
@@ -48,7 +49,8 @@ const App = () => {
 
 			{userAuth.loggedIn}
 			<UserRoute path='/rooms' exact component={MeetingRooms} />
-
+			<UserRoute path='/roomZone' exact component={RoomZone} />
+			<UserRoute path='/room' exact component={Room} />
 
 			{/* example api succesful fetch */}
 			<div>
