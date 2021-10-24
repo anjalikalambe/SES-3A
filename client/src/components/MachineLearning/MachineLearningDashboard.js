@@ -13,7 +13,6 @@ class MachineLearningDashboard extends Component {
 	render() {
 		return (
 			<div>
-				<Header />
 				<div className="text1">
 					Clusters
 				</div>

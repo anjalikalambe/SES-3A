@@ -7,7 +7,7 @@ import socketio
 
 app = Flask(__name__)
 # app = Flask(__name__, static_url_path="", static_folder="../client/build")
-socketio = SocketIO(app, cors_allowed_origins="http://localhost:3000")
+socketio = SocketIO(app, cors_allowed_origins="http://localhost:3001")
 
 clusterArr = []
 
