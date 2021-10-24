@@ -1,6 +1,7 @@
 .header {
     background-color: #ffffff;
-    height:80px;
+    height: 80px;
+    margin-top: 3% !important;
 }
 
 .logo{
@@ -12,14 +13,13 @@
 .navigation{
     margin: 30px !important;
     font-size: 20px;
-    line-height: 80px;
-    color:#43428C !important;
+    color:#43428C !important;  
 }
 
 .login-button{
     position: absolute !important;
     right: 37px;
-    top: 23px;
+    top: 47px;
 }
 
 .save-button{

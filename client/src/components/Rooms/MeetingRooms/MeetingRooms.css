@@ -7,11 +7,9 @@
 
 .header {
 	text-align: center;
-	margin-bottom: 50px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	margin-top: 50px;
 }
 
 .header img {
@@ -19,6 +17,7 @@
 }
 
 .meetingRooms__main {
+	height: 75vh;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
