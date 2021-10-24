@@ -7,8 +7,6 @@ let userId = 0
 class MachineLearningDashboard extends Component {
 	state = { users: [], data: [] };
 
-
-
 	componentDidMount() {
 		fetch("/members")
 			.then((res) => res.json())

@@ -4,17 +4,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import MeetingRooms from "./components/Rooms/MeetingRooms/MeetingRooms";
-import MachineLearningDashboard from "./components/MachineLearning/MachineLearningDashboard"
+import { StoreProvider } from "./stores/helpers/StoreContext";
+import { createStore } from "./stores/helpers/CreateStore";
+
+const rootStore = createStore();
 
 ReactDOM.render(
 	<BrowserRouter>
-		<Switch>
-			<Route path="/" exact component={App} />
-			<Route path="/rooms" component={MeetingRooms} />
-			<Route path="/ML" component={MachineLearningDashboard} />
-		</Switch>
+		<StoreProvider value={rootStore}>
+			<App />
+		</StoreProvider>
 	</BrowserRouter>,
+
 
 	document.getElementById("root")
 );

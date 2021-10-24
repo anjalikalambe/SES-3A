@@ -15,6 +15,7 @@ li{
     padding: 200px 20px 0 20px;
     transition: 150ms;
     border-radius: 0px 20px 20px 0px;
+    z-index: 1;
 }
 
 .side-menu.inactive{
@@ -70,7 +71,7 @@ li{
     font-size: 25px;
     line-height: 40px;
     text-align: center;
-    left: 40px;
+    right: 47px;
     color: #fff;
     padding: 24px 20 20 0;
     position: relative;
@@ -138,19 +139,19 @@ li{
 
 .bottom-icon{
     display: inline-block;
-    height: 40px;
+    height: 39px;
     font-size: 25px;
     line-height: 40px;
     text-align: center;
     color: #fff;
-    left: 60px;
-    padding: 24px 0 0 0;
+    right: 47px;
+    padding: 25px 0 0 0;
     position: relative;
 }
 
 .side-menu.inactive .footer .bottom-menu .bottom-icon{
     font-size: 25px;
-    padding: 24px 0 0 19px;
+    padding: 24px 0 0 0px;
     color: #fff;
     position: static;
 }

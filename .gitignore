@@ -1,4 +1,5 @@
 /react-backend
+venv/
 /venv/*
 /.venv/*
 .idea/

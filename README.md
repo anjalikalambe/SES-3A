@@ -113,6 +113,38 @@ To Run Jupyter notebook, type the following command <b>'python -m notebook'</b>.
 <hr style="width:50%">
 <br>
 
+## Python venv and package management
+
+| STEP 1 |Setup and run venv       |
+|:-------|:------------------------|
+
+To create a new virtual environment, run 'python -m venv /path/to/venv'
+
+To activate the venv, run 'source venv-path/bin/activate' or 'venv-path\Scripts\activate' on Windows.
+
+<hr>
+<br>
+
+| STEP 2 |Install Python Packages  |
+|:-------|:------------------------|
+
+With venv activated, in the flask-server directory, run 'pip install -r requirements.txt'
+
+If new packages have been installed, in the flask-server directory, run 'pip freeze > requirements.txt'
+
+<hr>
+<br>
+
+| STEP 3 |Running Flask separately |
+|:-------|:------------------------|
+
+To run the Flask server alone, in the flask-server directory, run 'python server.py'
+
+Press CTRL-C to close the server.
+
+<hr style="width:50%">
+<br>
+
 ## Running The Application
 <b>NOTE: Make sure you are in the '/client' directory to run the application</b>
 
