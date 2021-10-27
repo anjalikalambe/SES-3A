@@ -47,9 +47,10 @@ function Chat(props) {
 	socket.emit('join', {'room': chatRoom});
 
 	// Retrieve avatars from cloudinary
+	const defaultPfp = ["my-test-id", "other-test-id"];
 	const AVATAR = {
-		me: cloud.url("avatar/" + props.myId),
-		other: cloud.url("avatar/" + props.otherId)
+		me: cloud.url(defaultPfp.includes(props.myId) ? "avatar/default_pfp" : "avatar/" + props.myId),
+		other: cloud.url(defaultPfp.includes(props.otherId) ? "avatar/default_pfp" : "avatar/" + props.otherId)
 	}
 
 	// Hook to listen for incoming messages to update chatList.
