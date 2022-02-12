@@ -17,6 +17,7 @@ import UserRoute from "./utils/UserRoute";
 import UnprotectedRoute from "./utils/UnprotectedRoute";
 import Reports from "./pages/Reports";
 import Chat from "./pages/Chat/index";
+import MachineLearningDashboard from "./components/MachineLearning/MachineLearningDashboard";
 
 
 const App = () => {
@@ -51,6 +52,8 @@ const App = () => {
 			<UnprotectedRoute path='/profile' exact component={Profile} />
 			<UnprotectedRoute path='/login' exact component={LoginPage} />
 			<UnprotectedRoute path='/register' exact component={RegistrationPage} />
+			<UnprotectedRoute path='/ML' exact component={MachineLearningDashboard} />
+
 
 			{userAuth.loggedIn}
 			<UserRoute path='/rooms' exact component={MeetingRooms} />

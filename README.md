@@ -59,7 +59,7 @@ Command: <b>npm i</b> - (this can take a few min)
 
 ## Python / Flask Setup
 
-| STEP 1 |Install Packages Part 1/2|
+| STEP 1 |Install Packages Part 1/3|
 |:-------|:------------------------|  
 
 <b>NOTE:</b>
@@ -73,12 +73,24 @@ MAC: https://www.python.org/downloads/release/python-397/ download and install t
 <hr>
 <br>
 
-| STEP 2 |Install Packages Part 2/2|
+| STEP 2 |Install Packages Part 2/3|
 |:-------|:------------------------| 
 
 Go into the 'flask-server' directory and type the following command in CMD or Terminal 'pip3 install Flask'
 
 To Run Jupyter notebook, type the following command <b>'python -m notebook'</b>. This will launch a local host, make your way to the <b>'user_match_model.ipynb'</b> file and proceed to run the python file
+    
+<hr style="width:50%">
+<br>
+
+| STEP 3 |cd into the ML directory & run - Part (3/3)|
+|:-------|:------------------------------------------|  
+
+To ensure you can run the ML files locally, you will need install all the python packages. To do this, run the following command <b> pip install -r requirements.txt </b>.
+This will take a few minutes. 
+
+If in the future you install new python dependencies, you will need to update the <b>requirements.txt</b>. You can do this by going into the <b>ML</b> folder and typing 
+the following command <b>pip freeze > requirements.txt</b>. 
     
 <hr style="width:50%">
 <br>

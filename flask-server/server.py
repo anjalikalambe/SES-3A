@@ -1,10 +1,25 @@
+from operator import ne
+from csv import DictReader
+import pandas as pd
 from flask import Flask, jsonify, send_from_directory
 from flask_socketio import SocketIO, close_room, join_room, leave_room, send, emit
 import socketio
 
 app = Flask(__name__)
 # app = Flask(__name__, static_url_path="", static_folder="../client/build")
-socketio = SocketIO(app, cors_allowed_origins="http://localhost:3000")
+socketio = SocketIO(app, cors_allowed_origins="http://localhost:3001")
+
+clusterArr = []
+
+def cluster(arr):
+	arr.clear()
+	data = pd.read_csv('../ML/compiled_csv/clustered_profiles.csv')
+
+	# read row line by line
+	for d in data.values:
+		# read column by index
+		arr.append(d[9])
+	return arr
 
 # @app.route("/", defaults={"path": ""})
 # def serve(path):
@@ -14,7 +29,9 @@ socketio = SocketIO(app, cors_allowed_origins="http://localhost:3000")
 
 @app.route("/members")
 def members():
-    return {"members": ["Member 1", "Member 2", "Member 2"]}
+    # return {"members": ["Member 1", "Member 2", "Member 2"]}
+	return {"members": [cluster(clusterArr)]}
+
 
 # Private chat message handler
 @socketio.on("private_message")

@@ -23,11 +23,13 @@ function Header(users) {
 					component={RouterLink}
 					to="/features"
 				>
-
 					FEATURES
 				</Link>
 				<Link className='navigation' component={RouterLink} to='/profile'>
 					PROFILE
+				</Link>
+				<Link href="/ML" className="navigation">
+					ML
 				</Link>
 				<Link href="/room" className="navigation">
 					ROOM
